@@ -258,6 +258,7 @@ input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;widt
       </div>
       <div class="form-row">
         <div class="form-group"><label>Date Tasted</label><input type="date" id="fDate"></div>
+        <div class="form-group"><label>Price (£)</label><input type="text" id="fPrice" placeholder="e.g. 18.99"></div>
         <div class="form-group"><label>Liked?</label>
           <select class="fs" id="fLiked">
             <option value="♥ Yes">♥ Yes — Loved it</option>
@@ -290,6 +291,7 @@ input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;widt
         <input type="text" id="fAroma" placeholder="e.g. Peach, honey, citrus, mineral">
       </div>
       <div class="form-group"><label>Tasting Notes</label><textarea id="fNotes" placeholder="Aromas, texture, finish…"></textarea></div>
+      <div class="form-group"><label>Buy Link (URL)</label><input type="text" id="fUrl" placeholder="e.g. https://www.majestic.co.uk/..."></div>
       <div class="form-group">
         <label>Label Photo</label>
         <div class="photo-upload-area">
@@ -445,7 +447,7 @@ function updateStats(){
 function openAddModal(){
   editingId=null;currentPhoto="";
   document.getElementById('modalTitle').textContent='Add Wine';
-  ['fName','fAppellation','fGrape','fVintage','fNotes','fLocation','fCity','fOccasion','fDate','fAroma'].forEach(id=>document.getElementById(id).value='');
+  ['fName','fAppellation','fGrape','fVintage','fNotes','fLocation','fCity','fOccasion','fDate','fAroma','fUrl','fPrice'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('fColor').value='';
   document.getElementById('fLiked').value='♥ Yes';
   document.getElementById('fRating').value=0;document.getElementById('ratingVal').textContent='0';
@@ -471,6 +473,8 @@ function openEdit(id){
   document.getElementById('fOccasion').value=w.occasion||'';
   document.getElementById('fDate').value=w.date||'';
   document.getElementById('fAroma').value=w.aroma||'';
+  document.getElementById('fUrl').value=w.url||'';
+  document.getElementById('fPrice').value=w.price||'';
   document.getElementById('fAlcohol').value=w.alcohol||'';
   document.getElementById('fRating').value=w.rating||0;document.getElementById('ratingVal').textContent=w.rating||0;
   document.getElementById('tBody').value=w.tBody||50;
@@ -516,6 +520,8 @@ function saveWine(){
     occasion:document.getElementById('fOccasion').value.trim(),
     date:document.getElementById('fDate').value,
     aroma:document.getElementById('fAroma').value.trim(),
+    url:document.getElementById('fUrl').value.trim(),
+    price:document.getElementById('fPrice').value.trim(),
     tBody:parseInt(document.getElementById('tBody').value),
     tTannin:parseInt(document.getElementById('tTannin').value),
     tSweet:parseInt(document.getElementById('tSweet').value),
@@ -533,6 +539,31 @@ function deleteWine(id){
 }
 
 // ── DETAIL ──
+
+// ── COUNTRY FLAG ──
+function countryFlag(appellation){
+  const a=(appellation||'').toLowerCase();
+  if(a.includes('france')) return '🇫🇷';
+  if(a.includes('germany')) return '🇩🇪';
+  if(a.includes('italy')||a.includes('sicil')||a.includes('etna')) return '🇮🇹';
+  if(a.includes('spain')) return '🇪🇸';
+  if(a.includes('england')||a.includes('dorset')||a.includes('uk')) return '🇬🇧';
+  if(a.includes('austria')) return '🇦🇹';
+  if(a.includes('new zealand')) return '🇳🇿';
+  if(a.includes('south africa')) return '🇿🇦';
+  if(a.includes('australia')) return '🇦🇺';
+  if(a.includes('usa')||a.includes('california')||a.includes('sonoma')||a.includes('oregon')) return '🇺🇸';
+  if(a.includes('canada')||a.includes('niagara')) return '🇨🇦';
+  if(a.includes('chile')) return '🇨🇱';
+  if(a.includes('argentina')) return '🇦🇷';
+  if(a.includes('portugal')) return '🇵🇹';
+  if(a.includes('greece')) return '🇬🇷';
+  if(a.includes('hungary')) return '🇭🇺';
+  if(a.includes('georgia')) return '🇬🇪';
+  if(a.includes('japan')) return '🇯🇵';
+  if(a.includes('china')) return '🇨🇳';
+  return '🍷';
+}
 function openDetail(id){
   const w=wines.find(x=>x.id===id);if(!w)return;
   const bg=bgColor(w.color);
@@ -540,7 +571,7 @@ function openDetail(id){
     ?`<img src="${w.photo}" alt="" style="width:100%;object-fit:contain;display:block;position:relative;z-index:1">`
     :`<div class="detail-photo-ph">🍷</div>`;
 
-  const aromas=(w.aroma||'').split(',').map(s=>s.trim()).filter(Boolean).slice(0,3);
+  const aromas=(w.aroma||'').split(',').map(s=>s.trim()).filter(Boolean).slice(0,5);
   function aromaEmoji(a){
     const t=a.toLowerCase();
     if(/cherry|cherr/.test(t)) return'🍒';
@@ -580,7 +611,7 @@ function openDetail(id){
       </div>
       <div class="detail-info">
         <div class="d-wine-name">${w.name}</div>
-        <div class="d-wine-sub">${[w.appellation,w.grape].filter(Boolean).join(' · ')}<span style="font-size:13px;color:var(--burg);margin-left:8px;font-style:normal;font-weight:600">${likedTxt}</span></div>
+        <div class="d-wine-sub">${countryFlag(w.appellation)} ${w.appellation||""}${w.grape?" · 🍇 "+w.grape:""}<span style="font-size:13px;color:var(--burg);margin-left:8px;font-style:normal;font-weight:600">${likedTxt}</span><span style="font-size:13px;color:var(--ink-m);margin-left:8px;font-style:normal">${w.price?'£'+w.price:'£—'}</span></div>
         <div class="specs-row">
           <div class="spec-item"><span class="spec-val">${w.vintage||'—'}</span><span class="spec-lbl">Vintage</span></div>
           <div class="spec-item"><span class="spec-val">${w.color||'—'}</span><span class="spec-lbl">Type</span></div>
@@ -616,6 +647,11 @@ function openDetail(id){
       <div class="d-section-title">Tasting Notes</div>
       <div class="notes-text">${w.notes}</div>
     </div>`:''}
+
+    <div class="d-section">
+      <div class="d-section-title">Where to Buy</div>
+      ${w.url?`<a href="${w.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--burg);text-decoration:none;padding:8px 14px;border:1px solid rgba(92,30,44,.2);border-radius:3px;transition:background .2s" onmouseover="this.style.background='rgba(92,30,44,.06)'" onmouseout="this.style.background=''">🛒 <span style="text-decoration:underline;text-underline-offset:2px">${w.url.replace(/^https?:\/\//,'').split('/')[0]}</span> <span style="font-size:11px;color:var(--ink-l);margin-left:2px">→</span></a>`:'<span style="font-size:13px;color:var(--ink-l);font-style:italic">No link added yet</span>'}
+    </div>
   `;
 
   document.getElementById('detailFooter').innerHTML=`
