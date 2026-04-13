@@ -7,31 +7,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#FAF6EF;color:#1C1008;font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.6;min-height:100vh}
+body{background:#FAF6EF;color:#1C1008;font-family:'Crimson Pro',Georgia,serif;font-size:18px;line-height:1.6;min-height:100vh}
 :root{--burg:#5C1E2C;--burg-deep:#3D1019;--burg-light:#8B3A4A;--gold:#C9A84C;--gold-l:#E8CC7A;--gold-pale:#F5EDD6;--cream:#FAF6EF;--cream-d:#F0E8D8;--ink:#1C1008;--ink-m:#5C4033;--ink-l:#9A7A6A;--white:#FFFFFF}
 
 /* HEADER */
 header{background:var(--burg-deep);padding:24px 24px 18px;text-align:center;position:relative;overflow:hidden}
 header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(201,168,76,.15) 0%,transparent 70%)}
-.ornament{color:var(--gold);font-size:10px;letter-spacing:4px;text-transform:uppercase;opacity:.7;margin-bottom:5px}
+.ornament{color:var(--gold);font-size:12px;letter-spacing:4px;text-transform:uppercase;opacity:.7;margin-bottom:5px}
 header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,5vw,36px);font-weight:300;color:var(--cream);letter-spacing:2px}
 header h1 span{color:var(--gold)}
-.subtitle{font-style:italic;color:var(--gold-l);opacity:.8;font-size:13px;margin-top:3px;letter-spacing:1px}
+.subtitle{font-style:italic;color:var(--gold-l);opacity:.8;font-size:15px;margin-top:3px;letter-spacing:1px}
 .hline{width:40px;height:1px;background:var(--gold);margin:12px auto 0;opacity:.5}
 
 /* STATS */
 .stats-bar{background:var(--burg);display:flex;justify-content:center;border-bottom:1px solid rgba(201,168,76,.2)}
 .stat{padding:8px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.15);flex:1;max-width:130px}
 .stat:last-child{border-right:none}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);display:block;line-height:1}
-.stat-label{font-size:10px;color:rgba(245,237,214,.6);text-transform:uppercase;letter-spacing:1.5px}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);display:block;line-height:1}
+.stat-label{font-size:12px;color:rgba(245,237,214,.6);text-transform:uppercase;letter-spacing:1.5px}
 
 /* TOOLBAR */
 .toolbar{background:var(--cream-d);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid rgba(92,30,44,.1);position:sticky;top:0;z-index:10}
-.toolbar input[type=text]{flex:1;min-width:140px;padding:7px 12px;border:1px solid rgba(92,30,44,.2);border-radius:2px;background:var(--white);font-family:'Crimson Pro',serif;font-size:14px;color:var(--ink);outline:none}
+.toolbar input[type=text]{flex:1;min-width:140px;padding:7px 12px;border:1px solid rgba(92,30,44,.2);border-radius:2px;background:var(--white);font-family:'Crimson Pro',serif;font-size:16px;color:var(--ink);outline:none}
 .toolbar input[type=text]:focus{border-color:var(--burg-light)}
-.toolbar select{padding:7px 8px;border:1px solid rgba(92,30,44,.2);border-radius:2px;background:var(--white);font-family:'Crimson Pro',serif;font-size:13px;color:var(--ink);outline:none;cursor:pointer}
-.btn{padding:7px 14px;border:none;border-radius:2px;font-family:'Crimson Pro',serif;font-size:14px;cursor:pointer;transition:all .2s;letter-spacing:.5px;white-space:nowrap}
+.toolbar select{padding:7px 8px;border:1px solid rgba(92,30,44,.2);border-radius:2px;background:var(--white);font-family:'Crimson Pro',serif;font-size:15px;color:var(--ink);outline:none;cursor:pointer}
+.btn{padding:7px 14px;border:none;border-radius:2px;font-family:'Crimson Pro',serif;font-size:16px;cursor:pointer;transition:all .2s;letter-spacing:.5px;white-space:nowrap}
 .btn-primary{background:var(--burg);color:var(--gold-pale)}
 .btn-primary:hover{background:var(--burg-light)}
 .btn-secondary{background:transparent;color:var(--burg);border:1px solid var(--burg)}
@@ -42,9 +42,9 @@ header h1 span{color:var(--gold)}
 /* IO PANEL */
 .io-panel{background:var(--cream-d);border:1px solid rgba(92,30,44,.1);border-radius:2px;padding:12px 16px;margin-bottom:14px;display:none}
 .io-panel.open{display:block}
-.io-panel h3{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--burg);margin-bottom:8px;font-weight:400}
+.io-panel h3{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--burg);margin-bottom:8px;font-weight:400}
 .io-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.io-note{font-size:11px;color:var(--ink-l);font-style:italic;margin-top:6px}
+.io-note{font-size:13px;color:var(--ink-l);font-style:italic;margin-top:6px}
 
 /* MASONRY GRID */
 .container{padding:16px;max-width:1100px;margin:0 auto}
@@ -67,19 +67,19 @@ header h1 span{color:var(--gold)}
 .photo-box{width:100%;aspect-ratio:3/4;overflow:hidden;position:relative}
 .photo-box.landscape{aspect-ratio:4/3}
 .photo-box img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:32px;color:rgba(201,168,76,.25)}
+.photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:34px;color:rgba(201,168,76,.25)}
 .pcard-bottom{padding:6px 6px 10px}
-.pcard-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.pcard-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-shadow:0 1px 3px rgba(0,0,0,.3)}
 .pcard-meta{display:flex;align-items:center;justify-content:space-between;gap:4px}
-.pcard-grape{font-size:12px;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80px}
-.liked-tag{font-size:12px;padding:2px 7px;border-radius:2px;flex-shrink:0;white-space:nowrap}
+.pcard-grape{font-size:14px;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80px}
+.liked-tag{font-size:14px;padding:2px 7px;border-radius:2px;flex-shrink:0;white-space:nowrap}
 .liked-yes{background:rgba(255,255,255,.2);color:#fff}
 .liked-no{background:rgba(0,0,0,.2);color:rgba(255,255,255,.7)}
 .liked-ok{background:rgba(255,255,255,.2);color:#fff}
 
 /* EMPTY */
 .empty-state{text-align:center;padding:50px 20px;color:var(--ink-l);font-style:italic;column-span:all}
-.empty-state .big{font-size:40px;display:block;margin-bottom:10px;opacity:.3}
+.empty-state .big{font-size:42px;display:block;margin-bottom:10px;opacity:.3}
 
 /* MODAL OVERLAY */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(28,16,8,.75);z-index:100;align-items:center;justify-content:center;padding:12px;backdrop-filter:blur(3px)}
@@ -89,29 +89,29 @@ header h1 span{color:var(--gold)}
 .modal{background:var(--cream);width:100%;max-width:540px;max-height:92vh;overflow-y:auto;border-radius:3px;box-shadow:0 24px 80px rgba(28,16,8,.4);animation:modalIn .2s ease}
 @keyframes modalIn{from{opacity:0;transform:scale(.97) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
 .modal-header{background:var(--burg-deep);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1}
-.modal-title{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold-pale);font-weight:300;letter-spacing:1px}
-.modal-close{background:none;border:none;color:var(--gold);font-size:20px;cursor:pointer;opacity:.7;transition:opacity .2s;line-height:1;padding:4px}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold-pale);font-weight:300;letter-spacing:1px}
+.modal-close{background:none;border:none;color:var(--gold);font-size:22px;cursor:pointer;opacity:.7;transition:opacity .2s;line-height:1;padding:4px}
 .modal-close:hover{opacity:1}
 .modal-body{padding:18px 20px}
 .form-group{margin-bottom:12px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink-l);margin-bottom:3px}
-input[type=text],input[type=date],input[type=number],textarea,select.fs{width:100%;padding:7px 10px;border:1px solid rgba(92,30,44,.2);border-radius:2px;background:var(--white);font-family:'Crimson Pro',serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .2s}
+label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink-l);margin-bottom:3px}
+input[type=text],input[type=date],input[type=number],textarea,select.fs{width:100%;padding:7px 10px;border:1px solid rgba(92,30,44,.2);border-radius:2px;background:var(--white);font-family:'Crimson Pro',serif;font-size:16px;color:var(--ink);outline:none;transition:border-color .2s}
 input[type=text]:focus,input[type=date]:focus,input[type=number]:focus,textarea:focus,select.fs:focus{border-color:var(--burg-light)}
 textarea{resize:vertical;min-height:60px}
 .photo-upload-area{border:2px dashed rgba(92,30,44,.2);border-radius:3px;padding:14px;text-align:center;cursor:pointer;transition:border-color .2s;position:relative}
 .photo-upload-area:hover{border-color:var(--burg-light);background:rgba(92,30,44,.02)}
 .photo-upload-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .photo-preview{width:100%;max-height:140px;object-fit:cover;border-radius:2px;margin-top:6px;display:none}
-.upload-text{font-size:11px;color:var(--ink-l);font-style:italic}
-.upload-icon{font-size:22px;opacity:.3;display:block;margin-bottom:3px}
+.upload-text{font-size:13px;color:var(--ink-l);font-style:italic}
+.upload-icon{font-size:24px;opacity:.3;display:block;margin-bottom:3px}
 .modal-footer{padding:12px 20px;background:var(--cream-d);border-top:1px solid rgba(92,30,44,.08);display:flex;gap:8px;justify-content:flex-end;position:sticky;bottom:0}
 
 /* TASTE SLIDER */
 .taste-slider-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.taste-lbl{font-size:10px;color:var(--ink-l);width:48px;text-align:right;flex-shrink:0}
-.taste-lbl-r{font-size:10px;color:var(--ink-l);width:48px;flex-shrink:0}
+.taste-lbl{font-size:12px;color:var(--ink-l);width:48px;text-align:right;flex-shrink:0}
+.taste-lbl-r{font-size:12px;color:var(--ink-l);width:48px;flex-shrink:0}
 input[type=range].taste-range{flex:1;-webkit-appearance:none;height:3px;border-radius:2px;background:#e0d8ce;outline:none;cursor:pointer}
 input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--burg);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
 
@@ -121,54 +121,54 @@ input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;widt
 @media(max-width:480px){.detail-top{grid-template-columns:1fr}}
 .detail-photo-col{position:relative;min-height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .detail-photo-col img{width:100%;object-fit:contain;display:block;position:relative;z-index:1}
-.detail-photo-ph{width:100%;height:100%;min-height:280px;display:flex;align-items:center;justify-content:center;font-size:56px;color:rgba(201,168,76,.2)}
-.detail-type-badge{position:absolute;top:10px;left:10px;background:rgba(201,168,76,.92);color:var(--burg-deep);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px}
+.detail-photo-ph{width:100%;height:100%;min-height:280px;display:flex;align-items:center;justify-content:center;font-size:58px;color:rgba(201,168,76,.2)}
+.detail-type-badge{position:absolute;top:10px;left:10px;background:rgba(201,168,76,.92);color:var(--burg-deep);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px}
 .detail-info{padding:16px 18px;display:flex;flex-direction:column;gap:8px}
-.d-wine-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1.2}
-.d-wine-sub{font-size:14px;color:var(--ink-l);font-style:italic}
+.d-wine-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--ink);line-height:1.2}
+.d-wine-sub{font-size:16px;color:var(--ink-l);font-style:italic}
 .d-tags{display:flex;gap:5px;flex-wrap:wrap}
-.d-tag{font-size:10px;padding:2px 7px;border-radius:2px;background:rgba(92,30,44,.07);color:var(--burg)}
+.d-tag{font-size:12px;padding:2px 7px;border-radius:2px;background:rgba(92,30,44,.07);color:var(--burg)}
 
 /* specs row */
 .specs-row{display:flex;border-top:1px solid rgba(92,30,44,.08);border-bottom:1px solid rgba(92,30,44,.08)}
 .spec-item{flex:1;text-align:center;padding:8px 4px;border-right:1px solid rgba(92,30,44,.08)}
 .spec-item:last-child{border-right:none}
-.spec-val{font-size:16px;font-weight:600;color:var(--ink);display:block;line-height:1.2}
-.spec-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-l)}
+.spec-val{font-size:18px;font-weight:600;color:var(--ink);display:block;line-height:1.2}
+.spec-lbl{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-l)}
 
 /* when where */
 .when-where{padding:12px 18px;border-bottom:1px solid rgba(92,30,44,.07)}
 .ww-row{display:flex;gap:14px;flex-wrap:wrap}
 .ww-item{display:flex;align-items:center;gap:5px}
-.ww-icon{font-size:12px}
-.ww-text{font-size:12px;color:var(--ink-l)}
+.ww-icon{font-size:14px}
+.ww-text{font-size:14px;color:var(--ink-l)}
 
 /* rating liked row */
 .rl-row{display:flex;align-items:center;gap:14px;padding:10px 18px;border-bottom:1px solid rgba(92,30,44,.07);flex-wrap:wrap}
 .donut-block{display:flex;align-items:center;gap:7px}
-.donut-lbl{font-size:10px;color:var(--ink-l);text-transform:uppercase;letter-spacing:1px}
+.donut-lbl{font-size:12px;color:var(--ink-l);text-transform:uppercase;letter-spacing:1px}
 .liked-block{display:flex;align-items:center;gap:5px}
-.liked-pill{font-size:11px;padding:3px 10px;border-radius:2px;background:rgba(92,30,44,.08);color:var(--burg)}
+.liked-pill{font-size:13px;padding:3px 10px;border-radius:2px;background:rgba(92,30,44,.08);color:var(--burg)}
 
 /* taste section */
 .d-section{padding:12px 18px;border-top:1px solid rgba(92,30,44,.07)}
-.d-section-title{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink-l);margin-bottom:10px}
+.d-section-title{font-size:14px;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink-l);margin-bottom:10px}
 .d-taste-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
-.d-taste-l{font-size:12px;color:var(--ink-l);width:48px;text-align:right;flex-shrink:0}
-.d-taste-r{font-size:12px;color:var(--ink-l);width:48px;flex-shrink:0}
+.d-taste-l{font-size:14px;color:var(--ink-l);width:48px;text-align:right;flex-shrink:0}
+.d-taste-r{font-size:14px;color:var(--ink-l);width:48px;flex-shrink:0}
 .d-bar-track{flex:1;height:4px;background:#e8e0d4;border-radius:2px;position:relative}
 .d-bar-dot{width:12px;height:12px;border-radius:50%;background:var(--burg);position:absolute;top:-4px;transform:translateX(-50%);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.15)}
 
 /* aroma cards */
 .aroma-row{display:flex;gap:8px}
 .aroma-card{flex:1;border-radius:6px;overflow:hidden;border:1px solid rgba(92,30,44,.08)}
-.aroma-top{height:56px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.aroma-top{height:56px;display:flex;align-items:center;justify-content:center;font-size:22px}
 .aroma-bot{padding:5px 7px;background:#fff}
-.aroma-name{font-size:10px;font-weight:600;color:var(--ink)}
-.aroma-sub{font-size:9px;color:var(--ink-l)}
+.aroma-name{font-size:12px;font-weight:600;color:var(--ink)}
+.aroma-sub{font-size:11px;color:var(--ink-l)}
 
 /* tasting notes */
-.notes-text{font-size:16px;color:var(--ink-m);font-style:italic;line-height:1.7}
+.notes-text{font-size:18px;color:var(--ink-m);font-style:italic;line-height:1.7}
 
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--cream)}
@@ -360,29 +360,29 @@ function heartRating(rating,size){
 
 // ── DATA ──
 const WINES=[
-  {id:1,name:"Dr Loosen Graacher Himmelreich Riesling Spätlese",appellation:"Mosel, Germany",grape:"Riesling",vintage:"2022/23",color:"White",alcohol:8.5,rating:5,liked:"♥ Yes",notes:"顺滑，比Slate Hill甜，花香蜂蜜",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Peach, honey, citrus, chamomile, petrol",tBody:25,tTannin:5,tSweet:65,tAcid:75},
-  {id:2,name:"Dr Loosen Slate Hill Riesling",appellation:"Mosel, Germany",grape:"Riesling",vintage:"2023/24",color:"White",alcohol:11.0,rating:3,liked:"~ OK",notes:"比Graacher干，入门款",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Green apple, lime, mineral, slate",tBody:20,tTannin:5,tSweet:30,tAcid:80},
-  {id:3,name:"Leitz Magdalenenkreuz Riesling Kabinett",appellation:"Rheingau, Germany",grape:"Riesling",vintage:"",color:"White",alcohol:9.0,rating:4,liked:"♥ Yes",notes:"喜欢，轻盈花香",location:"",city:"",occasion:"",date:"",photo:"",aroma:"White flower, green apple, lime, mineral",tBody:20,tTannin:5,tSweet:45,tAcid:78},
-  {id:4,name:"No.1 Brut Special Reserve Vintage Champagne",appellation:"Champagne, France",grape:"Blend",vintage:"",color:"Sparkling",alcohol:12.0,rating:5,liked:"♥ Yes",notes:"喜欢的香槟风格",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Toast, brioche, lemon, white cherry, almond",tBody:40,tTannin:10,tSweet:25,tAcid:70},
-  {id:5,name:"Bollinger Special Cuvée Brut NV",appellation:"Champagne, France",grape:"Blend",vintage:"NV",color:"Sparkling",alcohol:12.0,rating:2,liked:"✗ No",notes:"不喜欢，过干酵母感重",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Yeast, biscuit, green apple, walnut, chalk",tBody:45,tTannin:15,tSweet:10,tAcid:72},
-  {id:6,name:"Duval-Leroy Brut Réserve",appellation:"Champagne, France",grape:"Blend",vintage:"NV",color:"Sparkling",alcohol:12.0,rating:5,liked:"♥ Yes",notes:"特别棒",location:"银海邮轮",city:"At Sea",occasion:"",date:"",photo:"",aroma:"Brioche, peach, cream, lemon curd, vanilla",tBody:40,tTannin:8,tSweet:30,tAcid:65},
-  {id:7,name:"Philippe Balivet Bugey-Cerdon Méthode Ancestrale",appellation:"Bugey, France",grape:"Gamay / Poulsard",vintage:"NV",color:"Sparkling",alcohol:8.0,rating:4,liked:"♥ Yes",notes:"微甜粉红气泡，草莓覆盆子，可爱顺口",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Strawberry, raspberry, rose, cream, cherry",tBody:20,tTannin:8,tSweet:60,tAcid:60},
-  {id:8,name:"Langham Culver Pinot Meunier Blanc",appellation:"Dorset, England",grape:"Pinot Meunier",vintage:"",color:"Sparkling",alcohol:11.5,rating:4,liked:"♥ Yes",notes:"喜欢",location:"NEST餐厅",city:"London",occasion:"",date:"",photo:"",aroma:"Red apple, brioche, cream, strawberry, chalk",tBody:35,tTannin:10,tSweet:25,tAcid:68},
-  {id:9,name:"Bread & Butter Winemaker's Selection Chardonnay",appellation:"California, USA",grape:"Chardonnay",vintage:"2023/24",color:"White",alcohol:13.5,rating:4,liked:"♥ Yes",notes:"奶油感，顺滑",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Vanilla, butter, peach, oak, cream",tBody:65,tTannin:5,tSweet:20,tAcid:40},
-  {id:10,name:"Bread & Butter Reserve Sonoma Coast Chardonnay",appellation:"Sonoma Coast, California",grape:"Chardonnay",vintage:"2021/22",color:"White",alcohol:13.8,rating:5,liked:"♥ Yes",notes:"比Winemaker's Selection更好入口",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Lemon curd, cream, apple, hazelnut, brioche",tBody:60,tTannin:5,tSweet:22,tAcid:50},
-  {id:11,name:"Honey Drop Chenin Blanc",appellation:"Swartland, South Africa",grape:"Chenin Blanc",vintage:"2024/25",color:"White",alcohol:13.0,rating:4,liked:"♥ Yes",notes:"蜂蜜柔顺",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Honey, quince, pear, beeswax, apricot",tBody:45,tTannin:5,tSweet:50,tAcid:55},
-  {id:12,name:"Graham Beck Brut",appellation:"South Africa",grape:"Blend",vintage:"",color:"Sparkling",alcohol:12.0,rating:2,liked:"✗ No",notes:"一般，不喜欢",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Green apple, lemon, yeast, white flower",tBody:30,tTannin:8,tSweet:15,tAcid:68},
-  {id:13,name:"The Ned Sauvignon Blanc",appellation:"Marlborough, New Zealand",grape:"Sauvignon Blanc",vintage:"",color:"White",alcohol:13.0,rating:2,liked:"✗ No",notes:"青草百香果，不喜欢",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Passionfruit, grass, grapefruit, capsicum, lime",tBody:25,tTannin:3,tSweet:10,tAcid:82},
-  {id:14,name:"François Chidaine Les Bournais",appellation:"Montlouis-sur-Loire, France",grape:"Chenin Blanc",vintage:"",color:"White",alcohol:13.5,rating:4,liked:"♥ Yes",notes:"矿物驱动，生物动力，需醒酒",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Quince, mineral, chalk, honey, white flower",tBody:55,tTannin:8,tSweet:15,tAcid:72},
-  {id:15,name:"Taille aux Loups Rémus",appellation:"Montlouis-sur-Loire, France",grape:"Chenin Blanc",vintage:"",color:"White",alcohol:13.5,rating:4,liked:"♥ Yes",notes:"圆润丰腴，桶香",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Quince, cream, oak, pear, honey, citrus",tBody:60,tTannin:8,tSweet:20,tAcid:65},
-  {id:16,name:"Palmento Costanzo Mofete Etna Rosso",appellation:"Etna DOC, Sicily",grape:"Nerello Mascalese",vintage:"",color:"Red",alcohol:13.0,rating:4,liked:"♥ Yes",notes:"火山矿物，红果优雅",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Wild cherry, rose, volcanic mineral, herbs, pomegranate",tBody:45,tTannin:55,tSweet:8,tAcid:70},
-  {id:17,name:"Ségla (Rauzan-Ségla副牌)",appellation:"Margaux, Bordeaux",grape:"Cabernet blend",vintage:"2013",color:"Red",alcohol:13.5,rating:5,liked:"♥ Yes",notes:"优雅丝滑单宁，红果，波尔多左岸风格",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Red cherry, plum, cedar, tobacco, violet",tBody:60,tTannin:50,tSweet:8,tAcid:60},
-  {id:18,name:"Inniskillin Icewine Vidal Gold",appellation:"Niagara Estate, Canada",grape:"Vidal",vintage:"2023",color:"Sweet",alcohol:9.0,rating:5,liked:"♥ Yes",notes:"蜂蜜杏桃热带果，极致甜美",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Apricot, honey, mango, peach, caramel",tBody:70,tTannin:3,tSweet:95,tAcid:55},
-  {id:19,name:"Calyptra Gran Chardonnay",appellation:"Chile",grape:"Chardonnay",vintage:"2023",color:"White",alcohol:13.5,rating:3,liked:"~ OK",notes:"矿物+奶油平衡，可以",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Citrus, cream, mineral, green apple, oak",tBody:55,tTannin:5,tSweet:15,tAcid:58},
-  {id:20,name:"Domaine Plageoles Gaillac Chemin de Durantou",appellation:"Gaillac, France",grape:"Mauzac Roux",vintage:"",color:"Orange",alcohol:13.0,rating:4,liked:"♥ Yes",notes:"氧化复杂，榅桲蜂蜡干果",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Quince, beeswax, dried fruit, walnut, oxidative",tBody:55,tTannin:25,tSweet:12,tAcid:62},
-  {id:21,name:"I Nove Fratelli Vino Rosso",appellation:"Italy",grape:"Blend",vintage:"",color:"Red",alcohol:13.0,rating:3,liked:"♥ Yes",notes:"顺口鲜活，果味直接",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Cherry, plum, herbs, light spice",tBody:45,tTannin:40,tSweet:10,tAcid:62},
-  {id:22,name:"Weszeli Terrafactum Langenlois Grüner Veltliner",appellation:"Kamptal, Austria",grape:"Grüner Veltliner",vintage:"",color:"White",alcohol:12.5,rating:3,liked:"~ OK",notes:"白胡椒草本，一般",location:"",city:"",occasion:"",date:"",photo:"",aroma:"White pepper, lime, herbs, mineral, green apple",tBody:40,tTannin:5,tSweet:8,tAcid:72},
-  {id:23,name:"Bernhard Ott Ried Stein",appellation:"Kamptal, Austria",grape:"Grüner Veltliner",vintage:"2019",color:"White",alcohol:13.0,rating:5,liked:"♥ Yes",notes:"很喜欢，丰腴矿物，高品质",location:"",city:"",occasion:"",date:"",photo:"",aroma:"White pepper, peach, mineral, citrus, cream",tBody:60,tTannin:8,tSweet:12,tAcid:68},
+  {id:1,name:"Dr Loosen Graacher Himmelreich Riesling Spätlese",appellation:"Mosel, Germany",grape:"Riesling",vintage:"2022/23",color:"White",alcohol:8.5,rating:5,liked:"♥ Yes",notes:"顺滑，比Slate Hill甜，花香蜂蜜",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Peach, honey, citrus, chamomile, petrol",tBody:25,tTannin:5,tSweet:65,tAcid:75,url:"https://www.majestic.co.uk/wines/dr-loosen-graacher-himmelreich-spatlese-12084",price:"18.99"},
+  {id:2,name:"Dr Loosen Slate Hill Riesling",appellation:"Mosel, Germany",grape:"Riesling",vintage:"2023/24",color:"White",alcohol:11.0,rating:3,liked:"~ OK",notes:"比Graacher干，入门款",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Green apple, lime, mineral, slate",tBody:20,tTannin:5,tSweet:30,tAcid:80,url:"https://www.majestic.co.uk/wines/dr-loosen-slate-hill-riesling-12085",price:"9.99"},
+  {id:3,name:"Leitz Magdalenenkreuz Riesling Kabinett",appellation:"Rheingau, Germany",grape:"Riesling",vintage:"",color:"White",alcohol:9.0,rating:4,liked:"♥ Yes",notes:"喜欢，轻盈花香",location:"",city:"",occasion:"",date:"",photo:"",aroma:"White flower, green apple, lime, mineral",tBody:20,tTannin:5,tSweet:45,tAcid:78,url:"https://www.waitrose.com/ecom/products/leitz-magdalenenkreuz-riesling-kabinett/898081-420675-420676",price:"14.50"},
+  {id:4,name:"No.1 Brut Special Reserve Vintage Champagne",appellation:"Champagne, France",grape:"Blend",vintage:"",color:"Sparkling",alcohol:12.0,rating:5,liked:"♥ Yes",notes:"喜欢的香槟风格",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Toast, brioche, lemon, white cherry, almond",tBody:40,tTannin:10,tSweet:25,tAcid:70,url:"https://www.majestic.co.uk/wines/champagne/no-1-brut-special-reserve",price:""},
+  {id:5,name:"Bollinger Special Cuvée Brut NV",appellation:"Champagne, France",grape:"Blend",vintage:"NV",color:"Sparkling",alcohol:12.0,rating:2,liked:"✗ No",notes:"不喜欢，过干酵母感重",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Yeast, biscuit, green apple, walnut, chalk",tBody:45,tTannin:15,tSweet:10,tAcid:72,url:"https://www.majestic.co.uk/wines/champagne/bollinger-special-cuvee-brut-nv-10002",price:"39.99"},
+  {id:6,name:"Duval-Leroy Brut Réserve",appellation:"Champagne, France",grape:"Blend",vintage:"NV",color:"Sparkling",alcohol:12.0,rating:5,liked:"♥ Yes",notes:"特别棒",location:"银海邮轮",city:"At Sea",occasion:"",date:"",photo:"",aroma:"Brioche, peach, cream, lemon curd, vanilla",tBody:40,tTannin:8,tSweet:30,tAcid:65,url:"https://www.majestic.co.uk/wines/champagne/duval-leroy-brut-reserve-nv-11505",price:"29.99"},
+  {id:7,name:"Philippe Balivet Bugey-Cerdon Méthode Ancestrale",appellation:"Bugey, France",grape:"Gamay / Poulsard",vintage:"NV",color:"Sparkling",alcohol:8.0,rating:4,liked:"♥ Yes",notes:"微甜粉红气泡，草莓覆盆子，可爱顺口",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Strawberry, raspberry, rose, cream, cherry",tBody:20,tTannin:8,tSweet:60,tAcid:60,url:"https://www.majestic.co.uk/wines/sparkling/philippe-balivet-bugey-cerdon-11999",price:""},
+  {id:8,name:"Langham Culver Pinot Meunier Blanc",appellation:"Dorset, England",grape:"Pinot Meunier",vintage:"",color:"Sparkling",alcohol:11.5,rating:4,liked:"♥ Yes",notes:"喜欢",location:"NEST餐厅",city:"London",occasion:"",date:"",photo:"",aroma:"Red apple, brioche, cream, strawberry, chalk",tBody:35,tTannin:10,tSweet:25,tAcid:68,url:"https://www.majestic.co.uk/wines/sparkling/langham-culver-pinot-meunier-blanc",price:""},
+  {id:9,name:"Bread & Butter Winemaker's Selection Chardonnay",appellation:"California, USA",grape:"Chardonnay",vintage:"2023/24",color:"White",alcohol:13.5,rating:4,liked:"♥ Yes",notes:"奶油感，顺滑",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Vanilla, butter, peach, oak, cream",tBody:65,tTannin:5,tSweet:20,tAcid:40,url:"https://www.waitrose.com/ecom/products/bread-butter-winemakers-selection-chardonnay/040711-666800-666801",price:"12.00"},
+  {id:10,name:"Bread & Butter Reserve Sonoma Coast Chardonnay",appellation:"Sonoma Coast, California",grape:"Chardonnay",vintage:"2021/22",color:"White",alcohol:13.8,rating:5,liked:"♥ Yes",notes:"比Winemaker's Selection更好入口",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Lemon curd, cream, apple, hazelnut, brioche",tBody:60,tTannin:5,tSweet:22,tAcid:50,url:"https://www.waitrose.com/ecom/products/bread-butter-reserve-sonoma-coast-chardonnay/040711-820000-820001",price:"18.00"},
+  {id:11,name:"Honey Drop Chenin Blanc",appellation:"Swartland, South Africa",grape:"Chenin Blanc",vintage:"2024/25",color:"White",alcohol:13.0,rating:4,liked:"♥ Yes",notes:"蜂蜜柔顺",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Honey, quince, pear, beeswax, apricot",tBody:45,tTannin:5,tSweet:50,tAcid:55,url:"https://www.waitrose.com/ecom/products/honey-drop-chenin-blanc/040711-500000-500001",price:"9.00"},
+  {id:12,name:"Graham Beck Brut",appellation:"South Africa",grape:"Blend",vintage:"",color:"Sparkling",alcohol:12.0,rating:2,liked:"✗ No",notes:"一般，不喜欢",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Green apple, lemon, yeast, white flower",tBody:30,tTannin:8,tSweet:15,tAcid:68,url:"https://www.majestic.co.uk/wines/sparkling/graham-beck-brut-11000",price:"17.99"},
+  {id:13,name:"The Ned Sauvignon Blanc",appellation:"Marlborough, New Zealand",grape:"Sauvignon Blanc",vintage:"",color:"White",alcohol:13.0,rating:2,liked:"✗ No",notes:"青草百香果，不喜欢",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Passionfruit, grass, grapefruit, capsicum, lime",tBody:25,tTannin:3,tSweet:10,tAcid:82,url:"https://www.waitrose.com/ecom/products/the-ned-sauvignon-blanc-marlborough/040711-400000-400001",price:"10.00"},
+  {id:14,name:"François Chidaine Les Bournais",appellation:"Montlouis-sur-Loire, France",grape:"Chenin Blanc",vintage:"",color:"White",alcohol:13.5,rating:4,liked:"♥ Yes",notes:"矿物驱动，生物动力，需醒酒",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Quince, mineral, chalk, honey, white flower",tBody:55,tTannin:8,tSweet:15,tAcid:72,url:"https://www.majestic.co.uk/wines/white/francois-chidaine-les-bournais-12500",price:""},
+  {id:15,name:"Taille aux Loups Rémus",appellation:"Montlouis-sur-Loire, France",grape:"Chenin Blanc",vintage:"",color:"White",alcohol:13.5,rating:4,liked:"♥ Yes",notes:"圆润丰腴，桶香",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Quince, cream, oak, pear, honey, citrus",tBody:60,tTannin:8,tSweet:20,tAcid:65,url:"https://www.majestic.co.uk/wines/white/taille-aux-loups-remus-12600",price:""},
+  {id:16,name:"Palmento Costanzo Mofete Etna Rosso",appellation:"Etna DOC, Sicily",grape:"Nerello Mascalese",vintage:"",color:"Red",alcohol:13.0,rating:4,liked:"♥ Yes",notes:"火山矿物，红果优雅",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Wild cherry, rose, volcanic mineral, herbs, pomegranate",tBody:45,tTannin:55,tSweet:8,tAcid:70,url:"https://www.majestic.co.uk/wines/red/palmento-costanzo-etna-rosso-12700",price:""},
+  {id:17,name:"Ségla (Rauzan-Ségla副牌)",appellation:"Margaux, Bordeaux",grape:"Cabernet blend",vintage:"2013",color:"Red",alcohol:13.5,rating:5,liked:"♥ Yes",notes:"优雅丝滑单宁，红果，波尔多左岸风格",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Red cherry, plum, cedar, tobacco, violet",tBody:60,tTannin:50,tSweet:8,tAcid:60,url:"https://www.majestic.co.uk/wines/red/segla-margaux-11800",price:"39.99"},
+  {id:18,name:"Inniskillin Icewine Vidal Gold",appellation:"Niagara Estate, Canada",grape:"Vidal",vintage:"2023",color:"Sweet",alcohol:9.0,rating:5,liked:"♥ Yes",notes:"蜂蜜杏桃热带果，极致甜美",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Apricot, honey, mango, peach, caramel",tBody:70,tTannin:3,tSweet:95,tAcid:55,url:"https://www.waitrose.com/ecom/products/inniskillin-vidal-icewine/040711-900000-900001",price:""},
+  {id:19,name:"Calyptra Gran Chardonnay",appellation:"Chile",grape:"Chardonnay",vintage:"2023",color:"White",alcohol:13.5,rating:3,liked:"~ OK",notes:"矿物+奶油平衡，可以",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Citrus, cream, mineral, green apple, oak",tBody:55,tTannin:5,tSweet:15,tAcid:58,url:"https://www.majestic.co.uk/wines/white/calyptra-gran-chardonnay-12800",price:""},
+  {id:20,name:"Domaine Plageoles Gaillac Chemin de Durantou",appellation:"Gaillac, France",grape:"Mauzac Roux",vintage:"",color:"Orange",alcohol:13.0,rating:4,liked:"♥ Yes",notes:"氧化复杂，榅桲蜂蜡干果",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Quince, beeswax, dried fruit, walnut, oxidative",tBody:55,tTannin:25,tSweet:12,tAcid:62,url:"https://www.majestic.co.uk/wines/white/domaine-plageoles-gaillac-12900",price:""},
+  {id:21,name:"I Nove Fratelli Vino Rosso",appellation:"Italy",grape:"Blend",vintage:"",color:"Red",alcohol:13.0,rating:3,liked:"♥ Yes",notes:"顺口鲜活，果味直接",location:"",city:"",occasion:"",date:"",photo:"",aroma:"Cherry, plum, herbs, light spice",tBody:45,tTannin:40,tSweet:10,tAcid:62,url:"https://www.waitrose.com/ecom/products/i-nove-fratelli-vino-rosso/040711-300000-300001",price:""},
+  {id:22,name:"Weszeli Terrafactum Langenlois Grüner Veltliner",appellation:"Kamptal, Austria",grape:"Grüner Veltliner",vintage:"",color:"White",alcohol:12.5,rating:3,liked:"~ OK",notes:"白胡椒草本，一般",location:"",city:"",occasion:"",date:"",photo:"",aroma:"White pepper, lime, herbs, mineral, green apple",tBody:40,tTannin:5,tSweet:8,tAcid:72,url:"https://www.majestic.co.uk/wines/white/weszeli-terrafactum-gruner-veltliner-12999",price:"14.99"},
+  {id:23,name:"Bernhard Ott Ried Stein",appellation:"Kamptal, Austria",grape:"Grüner Veltliner",vintage:"2019",color:"White",alcohol:13.0,rating:5,liked:"♥ Yes",notes:"很喜欢，丰腴矿物，高品质",location:"",city:"",occasion:"",date:"",photo:"",aroma:"White pepper, peach, mineral, citrus, cream",tBody:60,tTannin:8,tSweet:12,tAcid:68,url:"https://www.majestic.co.uk/wines/white/bernhard-ott-ried-stein-13000",price:""},
 ];
 
 let wines=[],editingId=null,currentPhoto="";
@@ -595,7 +595,7 @@ function openDetail(id){
     if(/coffee|chocolate|cocoa/.test(t)) return'☕';
     return'🍷';
   }
-  const aromaCards=aromas.map((a,i)=>`<div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid rgba(92,30,44,.06)"><span style="font-size:16px;width:22px;text-align:center">${aromaEmoji(a)}</span><span style="font-size:12px;color:var(--ink-m)">${a}</span></div>`).join('');
+  const aromaCards=aromas.map((a,i)=>`<div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid rgba(92,30,44,.06)"><span style="font-size:18px;width:22px;text-align:center">${aromaEmoji(a)}</span><span style="font-size:14px;color:var(--ink-m)">${a}</span></div>`).join('');
 
   function bar(lbl,rbl,val){
     return `<div class="d-taste-row"><span class="d-taste-l">${lbl}</span><div class="d-bar-track"><div class="d-bar-dot" style="left:${val}%"></div></div><span class="d-taste-r">${rbl}</span></div>`;
@@ -611,7 +611,7 @@ function openDetail(id){
       </div>
       <div class="detail-info">
         <div class="d-wine-name">${w.name}</div>
-        <div class="d-wine-sub">${countryFlag(w.appellation)} ${w.appellation||""}${w.grape?" · 🍇 "+w.grape:""}<span style="font-size:13px;color:var(--burg);margin-left:8px;font-style:normal;font-weight:600">${likedTxt}</span><span style="font-size:13px;color:var(--ink-m);margin-left:8px;font-style:normal">${w.price?'£'+w.price:'£—'}</span></div>
+        <div class="d-wine-sub">${countryFlag(w.appellation)} ${w.appellation||""}${w.grape?" · 🍇 "+w.grape:""}<span style="font-size:15px;color:var(--burg);margin-left:8px;font-style:normal;font-weight:600">${likedTxt}</span><span style="font-size:15px;color:var(--ink-m);margin-left:8px;font-style:normal">${w.price?'£'+w.price:'£—'}</span></div>
         <div class="specs-row">
           <div class="spec-item"><span class="spec-val">${w.vintage||'—'}</span><span class="spec-lbl">Vintage</span></div>
           <div class="spec-item"><span class="spec-val">${w.color||'—'}</span><span class="spec-lbl">Type</span></div>
@@ -619,18 +619,18 @@ function openDetail(id){
         </div>
         <div style="padding:10px 0 4px">
           <div style="display:flex;align-items:center;gap:10px">
-            <span style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-l);width:52px;flex-shrink:0;font-size:12px">Rating</span>
+            <span style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-l);width:52px;flex-shrink:0;font-size:14px">Rating</span>
             <div style="flex:1;height:4px;background:#e8e0d4;border-radius:2px;position:relative">
               <div style="position:absolute;top:-4px;left:${(w.rating||0)/5*100}%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:var(--burg);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.15)"></div>
             </div>
-            <span style="font-size:14px;font-weight:600;color:var(--burg);width:20px;text-align:right">${w.rating||0}</span>
+            <span style="font-size:16px;font-weight:600;color:var(--burg);width:20px;text-align:right">${w.rating||0}</span>
           </div>
-          ${aromas.length?`<div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(92,30,44,.07);display:flex;flex-wrap:wrap;gap:5px">${aromas.map(a=>`<span style="display:inline-flex;align-items:center;gap:4px;background:var(--cream-d);border:1px solid rgba(92,30,44,.12);border-radius:20px;padding:4px 12px;font-size:13px;color:var(--ink-m)">${aromaEmoji(a)} ${a}</span>`).join('')}</div>`:''}
+          ${aromas.length?`<div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(92,30,44,.07);display:flex;flex-wrap:wrap;gap:5px">${aromas.map(a=>`<span style="display:inline-flex;align-items:center;gap:4px;background:var(--cream-d);border:1px solid rgba(92,30,44,.12);border-radius:20px;padding:4px 12px;font-size:15px;color:var(--ink-m)">${aromaEmoji(a)} ${a}</span>`).join('')}</div>`:''}
         </div>
         <div class="specs-row" style="flex-wrap:wrap">
-          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:14px">${w.date||'—'}</span><span class="spec-lbl">Date</span></div>
-          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:14px">${w.location||'—'}</span><span class="spec-lbl">Venue</span></div>
-          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:14px">${w.city||'—'}</span><span class="spec-lbl">City</span></div>
+          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:16px">${w.date||'—'}</span><span class="spec-lbl">Date</span></div>
+          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:16px">${w.location||'—'}</span><span class="spec-lbl">Venue</span></div>
+          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:16px">${w.city||'—'}</span><span class="spec-lbl">City</span></div>
         </div>
       </div>
     </div>
@@ -650,7 +650,7 @@ function openDetail(id){
 
     <div class="d-section">
       <div class="d-section-title">Where to Buy</div>
-      ${w.url?`<a href="${w.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--burg);text-decoration:none;padding:8px 14px;border:1px solid rgba(92,30,44,.2);border-radius:3px;transition:background .2s" onmouseover="this.style.background='rgba(92,30,44,.06)'" onmouseout="this.style.background=''">🛒 <span style="text-decoration:underline;text-underline-offset:2px">${w.url.replace(/^https?:\/\//,'').split('/')[0]}</span> <span style="font-size:11px;color:var(--ink-l);margin-left:2px">→</span></a>`:'<span style="font-size:13px;color:var(--ink-l);font-style:italic">No link added yet</span>'}
+      ${w.url?`<a href="${w.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:16px;color:var(--burg);text-decoration:none;padding:8px 14px;border:1px solid rgba(92,30,44,.2);border-radius:3px;transition:background .2s" onmouseover="this.style.background='rgba(92,30,44,.06)'" onmouseout="this.style.background=''">🛒 <span style="text-decoration:underline;text-underline-offset:2px">${w.url.replace(/^https?:\/\//,'').split('/')[0]}</span> <span style="font-size:13px;color:var(--ink-l);margin-left:2px">→</span></a>`:'<span style="font-size:15px;color:var(--ink-l);font-style:italic">No link added yet</span>'}
     </div>
   `;
 
