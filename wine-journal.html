@@ -27,10 +27,7 @@ header h1 span{color:var(--gold)}
 .stat-label{font-size:12px;color:rgba(245,237,214,.6);text-transform:uppercase;letter-spacing:1.5px}
 
 /* TOOLBAR */
-.toolbar{background:var(--cream-d);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid rgba(92,30,44,.1);position:sticky;top:0;z-index:10}
-.toolbar input[type=text]{flex:1;min-width:140px;padding:7px 12px;border:1px solid rgba(92,30,44,.2);border-radius:2px;background:var(--white);font-family:'Crimson Pro',serif;font-size:16px;color:var(--ink);outline:none}
-.toolbar input[type=text]:focus{border-color:var(--burg-light)}
-.toolbar select{padding:7px 8px;border:1px solid rgba(92,30,44,.2);border-radius:2px;background:var(--white);font-family:'Crimson Pro',serif;font-size:15px;color:var(--ink);outline:none;cursor:pointer}
+.toolbar{background:var(--cream-d);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid rgba(92,30,44,.1);position:sticky;top:0;z-index:10;justify-content:flex-end}
 .btn{padding:7px 14px;border:none;border-radius:2px;font-family:'Crimson Pro',serif;font-size:16px;cursor:pointer;transition:all .2s;letter-spacing:.5px;white-space:nowrap}
 .btn-primary{background:var(--burg);color:var(--gold-pale)}
 .btn-primary:hover{background:var(--burg-light)}
@@ -38,6 +35,13 @@ header h1 span{color:var(--gold)}
 .btn-secondary:hover{background:rgba(92,30,44,.08)}
 .btn-gold{background:var(--gold);color:var(--burg-deep);font-weight:600}
 .btn-gold:hover{background:var(--gold-l)}
+.btn-sm{padding:5px 10px;font-size:12px}
+
+/* TYPE FILTER TABS */
+.type-tabs{background:var(--cream);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid rgba(92,30,44,.08)}
+.type-tab{font-family:'Crimson Pro',serif;font-size:14px;padding:5px 14px;border-radius:20px;border:1px solid rgba(92,30,44,.2);background:transparent;color:var(--ink-m);cursor:pointer;transition:all .2s;white-space:nowrap}
+.type-tab:hover{border-color:var(--burg);color:var(--burg)}
+.type-tab.active{background:var(--burg);color:var(--gold-pale);border-color:var(--burg)}
 
 /* IO PANEL */
 .io-panel{background:var(--cream-d);border:1px solid rgba(92,30,44,.1);border-radius:2px;padding:12px 16px;margin-bottom:14px;display:none}
@@ -186,33 +190,42 @@ input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;widt
 </header>
 
 <div class="stats-bar">
-  <div class="stat"><span class="stat-num" id="statTotal">0</span><span class="stat-label">Recorded</span></div>
-  <div class="stat"><span class="stat-num" id="statLiked">0</span><span class="stat-label">Loved ♥</span></div>
-  <div class="stat"><span class="stat-num" id="statCountries">0</span><span class="stat-label">Countries</span></div>
+  <div class="stat" onclick="toggleTypeTabs()" style="cursor:pointer;user-select:none" title="Filter by type"><span class="stat-num" id="statTotal">0</span><span class="stat-label">Recorded</span></div>
+  <div class="stat" onclick="toggleLikedTabs()" style="cursor:pointer;user-select:none" title="Filter by preference"><span class="stat-num" id="statLiked">0</span><span class="stat-label">Loved ♥</span></div>
+  <div class="stat" onclick="toggleCountryTabs()" style="cursor:pointer;user-select:none" title="Filter by country"><span class="stat-num" id="statCountries">0</span><span class="stat-label">Countries</span></div>
+  <div class="stat" onclick="toggleGrapeTabs()" style="cursor:pointer;user-select:none" title="Filter by grape"><span class="stat-num" id="statGrapes">0</span><span class="stat-label">Grapes</span></div>
+  <div class="stat" style="padding:6px 16px;display:flex;align-items:center;gap:8px;max-width:none;flex:0">
+    <button class="btn btn-primary" style="padding:6px 16px;font-size:14px" onclick="openAddModal()">＋ Add Wine</button>
+    <button class="btn btn-secondary" style="padding:6px 10px;font-size:16px;border:none;background:none;color:var(--gold)" onclick="toggleIO()" title="Backup">⬇</button>
+  </div>
+</div>
+
+<div class="type-tabs" id="typeTabs" style="display:none">
+  <button class="type-tab active" onclick="filterType('')">All</button>
+  <button class="type-tab" onclick="filterType('White')">⚪ White</button>
+  <button class="type-tab" onclick="filterType('Red')">🔴 Red</button>
+  <button class="type-tab" onclick="filterType('Sparkling')">🫧 Sparkling</button>
+  <button class="type-tab" onclick="filterType('Rosé')">🩷 Rosé</button>
+  <button class="type-tab" onclick="filterType('Orange')">🟠 Orange</button>
+  <button class="type-tab" onclick="filterType('Sweet')">🍯 Sweet</button>
+</div>
+
+<div class="type-tabs" id="likedTabs" style="background:var(--cream-d);padding:8px 16px;gap:6px;border-top:none;display:none">
+  <button class="type-tab active" onclick="filterLikedTab('')">All</button>
+  <button class="type-tab" onclick="filterLikedTab('♥ Yes')">♥ Loved</button>
+  <button class="type-tab" onclick="filterLikedTab('~ OK')">~ Fine</button>
+  <button class="type-tab" onclick="filterLikedTab('✗ No')">✗ No</button>
+</div>
+
+<div class="type-tabs" id="grapeTabs" style="background:var(--cream);padding:8px 16px;gap:6px;display:none">
+  <button class="type-tab active" onclick="filterGrapeTab('')">🍇 All</button>
+</div>
+
+<div class="type-tabs" id="countryTabs" style="background:var(--cream-d);padding:8px 16px;gap:6px;display:none">
+  <button class="type-tab active" onclick="filterCountryTab('')">🌍 All</button>
 </div>
 
 <div class="container">
-  <div class="toolbar">
-    <input type="text" id="searchInput" placeholder="🔍  Search by name, region, grape…" oninput="renderWines()">
-    <select id="filterLiked" onchange="renderWines()">
-      <option value="">All</option>
-      <option value="♥ Yes">♥ Loved</option>
-      <option value="✗ No">✗ Disliked</option>
-      <option value="~ OK">~ OK</option>
-    </select>
-    <select id="filterColor" onchange="renderWines()">
-      <option value="">All types</option>
-      <option value="White">White</option>
-      <option value="Red">Red</option>
-      <option value="Sparkling">Sparkling</option>
-      <option value="Rosé">Rosé</option>
-      <option value="Orange">Orange</option>
-      <option value="Sweet">Sweet</option>
-    </select>
-    <button class="btn btn-primary" onclick="openAddModal()">＋ Add Wine</button>
-    <button class="btn btn-secondary" onclick="toggleIO()">Import / Export</button>
-  </div>
-
   <div class="io-panel" id="ioPanel">
     <h3>Data Management</h3>
     <div class="io-actions">
@@ -385,7 +398,63 @@ const WINES=[
   {id:23,name:"Bernhard Ott Ried Stein",appellation:"Kamptal, Austria",grape:"Grüner Veltliner",vintage:"2019",color:"White",alcohol:13.0,rating:5,liked:"♥ Yes",notes:"很喜欢，丰腴矿物，高品质",location:"",city:"",occasion:"",date:"",photo:"",aroma:"White pepper, peach, mineral, citrus, cream",tBody:60,tTannin:8,tSweet:12,tAcid:68,url:"https://www.majestic.co.uk/wines/white/bernhard-ott-ried-stein-13000",price:""},
 ];
 
-let wines=[],editingId=null,currentPhoto="";
+let wines=[],editingId=null,currentPhoto="",activeType="",activeLiked="",activeGrape="",activeCountry="";
+
+function toggleTypeTabs(){
+  const el=document.getElementById('typeTabs');
+  const isOpen=el.style.display==='flex';
+  el.style.display=isOpen?'none':'flex';
+  if(isOpen){activeType='';document.querySelectorAll('#typeTabs .type-tab').forEach(t=>t.classList.toggle('active',t.textContent.trim()==='All'));renderWines();}
+}
+function toggleLikedTabs(){
+  const el=document.getElementById('likedTabs');
+  const isOpen=el.style.display==='flex';
+  el.style.display=isOpen?'none':'flex';
+  if(isOpen){activeLiked='';document.querySelectorAll('#likedTabs .type-tab').forEach(t=>t.classList.toggle('active',t.textContent.trim()==='All'));renderWines();}
+}
+function toggleCountryTabs(){
+  const el=document.getElementById('countryTabs');
+  const isOpen=el.style.display==='flex';
+  el.style.display=isOpen?'none':'flex';
+  if(isOpen){activeCountry='';renderWines();}
+}
+function toggleGrapeTabs(){
+  const gt=document.getElementById('grapeTabs');
+  const isOpen=gt.style.display!=='none'&&gt.style.display!=='';
+  gt.style.display=isOpen?'none':'flex';
+  if(isOpen){activeGrape='';renderWines();}
+}
+function filterCountryTab(val){
+  activeCountry=val;
+  document.querySelectorAll('#countryTabs .type-tab').forEach(t=>{
+    const oc=t.getAttribute('onclick');
+    t.classList.toggle('active',oc===`filterCountryTab('${val}')`||(val===''&&t.textContent.includes('All')));
+  });
+  renderWines();
+}
+function filterGrapeTab(val){
+  activeGrape=val;
+  document.querySelectorAll('#grapeTabs .type-tab').forEach(t=>{
+    const oc=t.getAttribute('onclick');
+    t.classList.toggle('active',oc===`filterGrapeTab('${val}')`||(val===''&&t.textContent.trim()==='🍇 All'));
+  });
+  renderWines();
+}
+function filterLikedTab(val){
+  activeLiked=val;
+  document.querySelectorAll('#likedTabs .type-tab').forEach(t=>{
+    const oc=t.getAttribute('onclick');
+    t.classList.toggle('active',oc===`filterLikedTab('${val}')`||(val===''&&t.textContent.trim()==='All'));
+  });
+  renderWines();
+}
+function filterType(type){
+  activeType=type;
+  document.querySelectorAll('.type-tab').forEach(t=>{
+    t.classList.toggle('active', t.getAttribute('onclick')===`filterType('${type}')`|| (type===''&&t.textContent.trim()==='All'));
+  });
+  renderWines();
+}
 
 function loadData(){
   const s=localStorage.getItem('wineJournalV3');
@@ -396,12 +465,13 @@ function saveData(){localStorage.setItem('wineJournalV3',JSON.stringify(wines));
 
 // ── RENDER GRID ──
 function renderWines(){
-  const q=document.getElementById('searchInput').value.toLowerCase();
-  const fl=document.getElementById('filterLiked').value;
-  const fc=document.getElementById('filterColor').value;
+  const grapeVal=activeGrape||'';
   let f=wines.filter(w=>{
-    const mq=!q||[w.name,w.appellation,w.grape,w.notes,w.location,w.city].some(s=>s&&s.toLowerCase().includes(q));
-    return mq&&(!fl||w.liked===fl)&&(!fc||w.color===fc);
+    const matchC=!activeType||w.color===activeType;
+    const matchL=!activeLiked||w.liked===activeLiked;
+    const matchG=!grapeVal||w.grape===grapeVal;
+    const matchCo=!activeCountry||(w.appellation||"").toLowerCase().includes(activeCountry.toLowerCase());
+    return matchC&&matchL&&matchG&&matchCo;
   });
   const g=document.getElementById('wineGrid');
   if(!f.length){g.innerHTML='<div class="empty-state"><span class="big">🍷</span>No wines yet — click "+ Add Wine"</div>';updateStats();return;}
@@ -428,7 +498,6 @@ function cardHTML(w,i){
           <span class="pcard-grape">${w.grape||''}</span>
           <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">
             <span class="liked-tag ${lClass}">${lLabel}</span>
-            ${heartRating(w.rating||0)}
           </div>
         </div>
       </div>
@@ -439,6 +508,15 @@ function cardHTML(w,i){
 function updateStats(){
   document.getElementById('statTotal').textContent=wines.length;
   document.getElementById('statLiked').textContent=wines.filter(w=>w.liked==='♥ Yes').length;
+  document.getElementById('statGrapes').textContent=new Set(wines.map(w=>w.grape).filter(Boolean)).size;
+  // populate country tabs
+  const countries=[...new Set(wines.map(w=>(w.appellation||'').split(',').pop().trim()).filter(Boolean))].sort();
+  const ct=document.getElementById('countryTabs');
+  if(ct){ct.innerHTML='<button class="type-tab'+(activeCountry===''?' active':'')+'" onclick="filterCountryTab(\'\')">🌍 All</button>'+countries.map(c=>`<button class="type-tab${activeCountry===c?' active':''}" onclick="filterCountryTab('${c}')">${countryFlag(c)} ${c}</button>`).join('');}
+  // populate grape tabs
+  const grapes=[...new Set(wines.map(w=>w.grape).filter(Boolean))].sort();
+  const gt=document.getElementById('grapeTabs');
+  if(gt){gt.innerHTML='<button class="type-tab'+(activeGrape===''?' active':'')+'" onclick="filterGrapeTab(\'\')">🍇 All</button>'+grapes.map(g=>`<button class="type-tab${activeGrape===g?' active':''}" onclick="filterGrapeTab('${g}')">${g}</button>`).join('');}
   const c=new Set(wines.map(w=>(w.appellation||'').split(',').pop().trim()).filter(Boolean));
   document.getElementById('statCountries').textContent=c.size;
 }
