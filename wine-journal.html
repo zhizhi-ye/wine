@@ -69,10 +69,10 @@ header h1 span{color:var(--gold)}
 .photo-box img{width:100%;height:100%;object-fit:cover;display:block}
 .photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:32px;color:rgba(201,168,76,.25)}
 .pcard-bottom{padding:6px 6px 10px}
-.pcard-name{font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.pcard-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-shadow:0 1px 3px rgba(0,0,0,.3)}
 .pcard-meta{display:flex;align-items:center;justify-content:space-between;gap:4px}
-.pcard-grape{font-size:9px;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:72px}
-.liked-tag{font-size:9px;padding:1px 6px;border-radius:2px;flex-shrink:0;white-space:nowrap}
+.pcard-grape{font-size:12px;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80px}
+.liked-tag{font-size:12px;padding:2px 7px;border-radius:2px;flex-shrink:0;white-space:nowrap}
 .liked-yes{background:rgba(255,255,255,.2);color:#fff}
 .liked-no{background:rgba(0,0,0,.2);color:rgba(255,255,255,.7)}
 .liked-ok{background:rgba(255,255,255,.2);color:#fff}
@@ -117,15 +117,15 @@ input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;widt
 
 /* DETAIL MODAL */
 .dmodal{background:var(--cream);width:100%;max-width:660px;max-height:94vh;overflow-y:auto;border-radius:3px;box-shadow:0 24px 80px rgba(28,16,8,.4);animation:modalIn .2s ease}
-.detail-top{display:grid;grid-template-columns:200px 1fr}
+.detail-top{display:grid;grid-template-columns:200px 1fr;align-items:stretch}
 @media(max-width:480px){.detail-top{grid-template-columns:1fr}}
-.detail-photo-col{position:relative;min-height:280px;max-height:280px;overflow:hidden}
-.detail-photo-col img{width:100%;height:280px;object-fit:cover;object-position:center;display:block}
-.detail-photo-ph{width:100%;height:280px;display:flex;align-items:center;justify-content:center;font-size:56px;color:rgba(201,168,76,.2)}
+.detail-photo-col{position:relative;min-height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.detail-photo-col img{width:100%;object-fit:contain;display:block;position:relative;z-index:1}
+.detail-photo-ph{width:100%;height:100%;min-height:280px;display:flex;align-items:center;justify-content:center;font-size:56px;color:rgba(201,168,76,.2)}
 .detail-type-badge{position:absolute;top:10px;left:10px;background:rgba(201,168,76,.92);color:var(--burg-deep);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px}
 .detail-info{padding:16px 18px;display:flex;flex-direction:column;gap:8px}
-.d-wine-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--ink);line-height:1.2}
-.d-wine-sub{font-size:12px;color:var(--ink-l);font-style:italic}
+.d-wine-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1.2}
+.d-wine-sub{font-size:14px;color:var(--ink-l);font-style:italic}
 .d-tags{display:flex;gap:5px;flex-wrap:wrap}
 .d-tag{font-size:10px;padding:2px 7px;border-radius:2px;background:rgba(92,30,44,.07);color:var(--burg)}
 
@@ -133,8 +133,8 @@ input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;widt
 .specs-row{display:flex;border-top:1px solid rgba(92,30,44,.08);border-bottom:1px solid rgba(92,30,44,.08)}
 .spec-item{flex:1;text-align:center;padding:8px 4px;border-right:1px solid rgba(92,30,44,.08)}
 .spec-item:last-child{border-right:none}
-.spec-val{font-size:14px;font-weight:600;color:var(--ink);display:block;line-height:1.2}
-.spec-lbl{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-l)}
+.spec-val{font-size:16px;font-weight:600;color:var(--ink);display:block;line-height:1.2}
+.spec-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-l)}
 
 /* when where */
 .when-where{padding:12px 18px;border-bottom:1px solid rgba(92,30,44,.07)}
@@ -152,10 +152,10 @@ input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;widt
 
 /* taste section */
 .d-section{padding:12px 18px;border-top:1px solid rgba(92,30,44,.07)}
-.d-section-title{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink-l);margin-bottom:10px}
+.d-section-title{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink-l);margin-bottom:10px}
 .d-taste-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
-.d-taste-l{font-size:10px;color:var(--ink-l);width:48px;text-align:right;flex-shrink:0}
-.d-taste-r{font-size:10px;color:var(--ink-l);width:48px;flex-shrink:0}
+.d-taste-l{font-size:12px;color:var(--ink-l);width:48px;text-align:right;flex-shrink:0}
+.d-taste-r{font-size:12px;color:var(--ink-l);width:48px;flex-shrink:0}
 .d-bar-track{flex:1;height:4px;background:#e8e0d4;border-radius:2px;position:relative}
 .d-bar-dot{width:12px;height:12px;border-radius:50%;background:var(--burg);position:absolute;top:-4px;transform:translateX(-50%);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.15)}
 
@@ -168,7 +168,7 @@ input[type=range].taste-range::-webkit-slider-thumb{-webkit-appearance:none;widt
 .aroma-sub{font-size:9px;color:var(--ink-l)}
 
 /* tasting notes */
-.notes-text{font-size:14px;color:var(--ink-m);font-style:italic;line-height:1.7}
+.notes-text{font-size:16px;color:var(--ink-m);font-style:italic;line-height:1.7}
 
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--cream)}
@@ -537,8 +537,8 @@ function openDetail(id){
   const w=wines.find(x=>x.id===id);if(!w)return;
   const bg=bgColor(w.color);
   const photo=w.photo
-    ?`<img src="${w.photo}" alt="" style="width:100%;height:280px;object-fit:cover;object-position:center;display:block">`
-    :`<div class="detail-photo-ph" style="background:linear-gradient(160deg,${bg}aa,${bg})">🍷</div>`;
+    ?`<img src="${w.photo}" alt="" style="width:100%;object-fit:contain;display:block;position:relative;z-index:1">`
+    :`<div class="detail-photo-ph">🍷</div>`;
 
   const aromas=(w.aroma||'').split(',').map(s=>s.trim()).filter(Boolean).slice(0,3);
   function aromaEmoji(a){
@@ -574,13 +574,13 @@ function openDetail(id){
   document.getElementById('detailHeader').style.background=bgColor(w.color);
   document.getElementById('detailContent').innerHTML=`
     <div class="detail-top">
-      <div class="detail-photo-col">
+      <div class="detail-photo-col" style="background:${bg}">
         <div class="detail-type-badge">${w.color||'Wine'}</div>
         ${photo}
       </div>
       <div class="detail-info">
         <div class="d-wine-name">${w.name}</div>
-        <div class="d-wine-sub">${[w.appellation,w.grape].filter(Boolean).join(' · ')}<span style="font-size:11px;color:var(--burg);margin-left:8px;font-style:normal;font-weight:600">${likedTxt}</span></div>
+        <div class="d-wine-sub">${[w.appellation,w.grape].filter(Boolean).join(' · ')}<span style="font-size:13px;color:var(--burg);margin-left:8px;font-style:normal;font-weight:600">${likedTxt}</span></div>
         <div class="specs-row">
           <div class="spec-item"><span class="spec-val">${w.vintage||'—'}</span><span class="spec-lbl">Vintage</span></div>
           <div class="spec-item"><span class="spec-val">${w.color||'—'}</span><span class="spec-lbl">Type</span></div>
@@ -588,18 +588,18 @@ function openDetail(id){
         </div>
         <div style="padding:10px 0 4px">
           <div style="display:flex;align-items:center;gap:10px">
-            <span style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-l);width:44px;flex-shrink:0">Rating</span>
+            <span style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-l);width:52px;flex-shrink:0;font-size:12px">Rating</span>
             <div style="flex:1;height:4px;background:#e8e0d4;border-radius:2px;position:relative">
               <div style="position:absolute;top:-4px;left:${(w.rating||0)/5*100}%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:var(--burg);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.15)"></div>
             </div>
-            <span style="font-size:12px;font-weight:600;color:var(--burg);width:16px;text-align:right">${w.rating||0}</span>
+            <span style="font-size:14px;font-weight:600;color:var(--burg);width:20px;text-align:right">${w.rating||0}</span>
           </div>
-          ${aromas.length?`<div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(92,30,44,.07);display:flex;flex-wrap:wrap;gap:5px">${aromas.map(a=>`<span style="display:inline-flex;align-items:center;gap:4px;background:var(--cream-d);border:1px solid rgba(92,30,44,.12);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--ink-m)">${aromaEmoji(a)} ${a}</span>`).join('')}</div>`:''}
+          ${aromas.length?`<div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(92,30,44,.07);display:flex;flex-wrap:wrap;gap:5px">${aromas.map(a=>`<span style="display:inline-flex;align-items:center;gap:4px;background:var(--cream-d);border:1px solid rgba(92,30,44,.12);border-radius:20px;padding:4px 12px;font-size:13px;color:var(--ink-m)">${aromaEmoji(a)} ${a}</span>`).join('')}</div>`:''}
         </div>
         <div class="specs-row" style="flex-wrap:wrap">
-          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:12px">${w.date||'—'}</span><span class="spec-lbl">Date</span></div>
-          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:12px">${w.location||'—'}</span><span class="spec-lbl">Venue</span></div>
-          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:12px">${w.city||'—'}</span><span class="spec-lbl">City</span></div>
+          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:14px">${w.date||'—'}</span><span class="spec-lbl">Date</span></div>
+          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:14px">${w.location||'—'}</span><span class="spec-lbl">Venue</span></div>
+          <div class="spec-item" style="min-width:80px"><span class="spec-val" style="font-size:14px">${w.city||'—'}</span><span class="spec-lbl">City</span></div>
         </div>
       </div>
     </div>
