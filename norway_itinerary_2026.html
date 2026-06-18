@@ -311,6 +311,16 @@
 
   .timeline-item { display: flex; gap: 14px; align-items: flex-start; }
   .timeline-item.sub-item { margin-left: 42px; }
+  /* 可展开景点简介 */
+  .spot { margin-top: 6px; border: 1px solid #e3eef3; border-radius: 8px; background: #f8fcfd; overflow: hidden; }
+  .spot summary { list-style: none; cursor: pointer; padding: 7px 10px; font-size: 12px; font-weight: 600; color: var(--aurora); display: flex; align-items: center; gap: 6px; user-select: none; }
+  .spot summary::-webkit-details-marker { display: none; }
+  .spot summary::before { content: "ℹ️"; font-size: 12px; }
+  .spot summary::after { content: "▸ 简介"; margin-left: auto; font-size: 11px; color: #9bb3c0; font-weight: 500; }
+  .spot[open] summary::after { content: "▾ 收起"; }
+  .spot-body { padding: 0 10px 9px 10px; font-size: 12px; color: #5a7585; line-height: 1.6; }
+  .spot-tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .spot-tag { font-size: 10px; background: #e8f4f8; color: #2c6e8a; padding: 2px 7px; border-radius: 10px; font-weight: 600; }
   .timeline-icon { font-size: 18px; width: 28px; text-align: center; flex-shrink: 0; margin-top: 1px; }
   .timeline-time { font-size: 12px; font-weight: 600; color: var(--aurora); min-width: 42px; flex-shrink: 0; margin-top: 2px; font-variant-numeric: tabular-nums; }
   .timeline-content { flex: 1; }
@@ -866,7 +876,7 @@
         <div class="weekday">周四</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">奥斯陆</div>
+        <div class="day-location">奥斯陆 OSLO</div>
         <div class="day-title">城市游览 → 晚飞斯塔万格</div>
       </div>
     </div>
@@ -876,15 +886,48 @@
           <div class="timeline-icon">🚶</div>
           <div class="timeline-time">上午</div>
           <div class="timeline-content">
-            <div class="timeline-main">维京船博物馆</div>
+            <div class="timeline-main">维京船博物馆 Viking Ship Museum</div>
             <div class="timeline-sub">世界保存最完好的维京船</div>
+            <details class="spot">
+              <summary>维京船博物馆 Viking Ship Museum</summary>
+              <div class="spot-body">
+                位于Bygdøy半岛,收藏全球保存最完好的维京时代木船,包括9世纪的Oseberg号和Gokstad号——它们曾作为贵族墓船被埋葬,船体连同陪葬品(雪橇、马车、木雕)一同出土。木雕工艺极其精美,是了解维京航海与丧葬文化的核心收藏。注:博物馆正在大规模翻新扩建(新馆名"维京时代博物馆"),开放状态请出行前查官网确认。
+                <div class="spot-tags">
+                  <span class="spot-tag">🛶 维京文化</span>
+                  <span class="spot-tag">🏛️ 博物馆</span>
+                  <span class="spot-tag">⚠️ 翻新中·查开放</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-icon">🚶</div>
           <div class="timeline-time">下午</div>
           <div class="timeline-content">
-            <div class="timeline-main">阿克斯胡斯城堡 · Karl Johans Gate</div>
+            <div class="timeline-main">阿克斯胡斯城堡 Akershus Fortress · 卡尔约翰大街 Karl Johans Gate</div>
+            <details class="spot">
+              <summary>阿克斯胡斯城堡 Akershus Fortress</summary>
+              <div class="spot-body">
+                奥斯陆海港边的中世纪石砌要塞,始建于约1300年,扼守峡湾入口、曾多次抵御围攻从未被外敌攻陷,后由国王改建为文艺复兴风格的王家城堡。如今城墙、庭院和草坪免费开放,是俯瞰奥斯陆峡湾和市政厅的最佳散步地,城内还有军事博物馆和王家陵墓。
+                <div class="spot-tags">
+                  <span class="spot-tag">🏰 中世纪要塞</span>
+                  <span class="spot-tag">🚶 散步/免费</span>
+                  <span class="spot-tag">📸 峡湾景</span>
+                </div>
+              </div>
+            </details>
+            <details class="spot">
+              <summary>卡尔约翰大街 Karl Johans Gate</summary>
+              <div class="spot-body">
+                奥斯陆最主要的步行大街,从中央车站一路延伸到王宫,是城市的中轴线。沿途串起国会大厦、国家剧院、奥斯陆大学、大教堂和众多商店、咖啡馆、街头艺人,夏天尤其热闹。逛街、吃饭、感受奥斯陆城市氛围的首选,从这里步行可达多数市中心景点。
+                <div class="spot-tags">
+                  <span class="spot-tag">🛍️ 主步行街</span>
+                  <span class="spot-tag">🏛️ 国会/剧院/王宫</span>
+                  <span class="spot-tag">☕ 餐饮购物</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="transport-card">
@@ -927,7 +970,7 @@
         <div class="weekday">周五</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">斯塔万格</div>
+        <div class="day-location">斯塔万格 STAVANGER</div>
         <div class="day-title">取车 · 布道台徒步</div>
       </div>
     </div>
@@ -967,6 +1010,19 @@
           <div class="timeline-content">
             <div class="timeline-main">布道台 Preikestolen 徒步</div>
             <div class="timeline-sub">来回8km · 爬升330m · 约4-5小时 · 604米悬崖俯瞰吕瑟峡湾</div>
+            <details class="spot">
+              <summary>布道台 Preikestolen</summary>
+              <div class="spot-body">
+                挪威最著名的徒步目的地之一,一块约25×25米的天然方形巨石平台,垂直耸立在吕瑟峡湾(Lysefjord)上方604米。岩台是约1万年前冰川时期岩石沿裂缝崩裂形成的。徒步往返约8公里、爬升330米,沿途经过岩石坡、木栈道和高山湖,约4-5小时。山顶没有护栏,景观震撼但需注意安全,尤其雨天石面湿滑。8月是最佳季节,但游客多,建议早出发避开人潮。
+                <div class="spot-tags">
+                  <span class="spot-tag">🥾 中等强度徒步</span>
+                  <span class="spot-tag">📸 必看景观</span>
+                  <span class="spot-tag">⏱️ 4-5小时</span>
+                  <span class="spot-tag">⚠️ 无护栏·防滑</span>
+                  <span class="spot-tag">☀️ 夏季最佳</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="transport-card">
@@ -1011,7 +1067,7 @@
         <div class="weekday">周六</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">斯塔万格 → Eidfjord · 约240km · 约4.5小时(不含停留)</div>
+        <div class="day-location">斯塔万格 STAVANGER → 埃德峡湾 EIDFJORD · 约240km · 约4.5小时</div>
         <div class="day-title">E134自驾 · Langfossen · Låtefoss · Røldal(可选)</div>
       </div>
     </div>
@@ -1042,6 +1098,17 @@
           <div class="timeline-content">
             <div class="timeline-main">Langfossen 瀑布(Etne)</div>
             <div class="timeline-sub">高约600米 · E134从瀑布脚下经过 · 好停好看 · 当天第一个瀑布</div>
+            <details class="spot">
+              <summary>Langfossen 瀑布</summary>
+              <div class="spot-body">
+                挪威落差最大的瀑布之一,总高约612米,水流沿陡峭岩壁倾泻而下注入Åkrafjord峡湾。曾被多家媒体评为挪威乃至全球最美瀑布之一。最棒的是E134公路就从瀑布脚下经过,不用徒步、路边停车即可仰望全景,是当天进入峡湾区的第一个震撼点。体力好的也可沿陡峭小径爬到顶部看峡湾全景。
+                <div class="spot-tags">
+                  <span class="spot-tag">💧 612米瀑布</span>
+                  <span class="spot-tag">🚗 路边可看</span>
+                  <span class="spot-tag">📸 必看景观</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1050,6 +1117,18 @@
           <div class="timeline-content">
             <div class="timeline-main">Låtefoss 双瀑布（Langfossen后约21分钟）</div>
             <div class="timeline-sub">165米双瀑 · 水花溅到公路 · 古石拱桥 · 哈当厄尔最上镜 · 桥边停车位很小、旺季易满 · 备防水外套</div>
+            <details class="spot">
+              <summary>Låtefoss 双瀑布</summary>
+              <div class="spot-body">
+                Oddadalen山谷里最有名的瀑布,两股水流从165米高并排奔泻而下、在底部交汇,水量极大,水花常溅到下方的公路。瀑布前有一座1859年建的六孔石拱桥,是经典拍照构图。就在Rv13路边,停车即看(但停车位很小、旺季常满)。距离近、水雾大,记得带防水外套。它位于"七瀑谷"——10公里内有七条瀑布。
+                <div class="spot-tags">
+                  <span class="spot-tag">💧 165米双瀑</span>
+                  <span class="spot-tag">🌉 古石拱桥</span>
+                  <span class="spot-tag">📸 最上镜</span>
+                  <span class="spot-tag">🅿️ 车位少</span>
+                </div>
+              </div>
+            </details>
             <div class="timeline-sub">📍位于Oddadalen"七瀑谷"——这条山谷10公里内有七条瀑布,Låtefoss是最有名的一条,沿途还能看到其他瀑布 · Låtefoss→Odda约16分钟</div>
           </div>
         </div>
@@ -1058,6 +1137,18 @@
           <div class="timeline-time">可选</div>
           <div class="timeline-content">
             <div class="timeline-main">Røldal 木板教堂 Stave Church（往东绕行）</div>
+            <details class="spot">
+              <summary>Røldal 木板教堂 Stave Church</summary>
+              <div class="spot-body">
+                建于约1250年的中世纪木板教堂(stave church是挪威独有的全木结构教堂)。中世纪时是北欧重要的天主教朝圣地——传说教堂内的十字架在仲夏夜会"流汗",据信能治病,吸引大批朝圣者,直到宗教改革后被禁。教堂内保留了珍贵的中世纪壁画和木雕。规模不大,适合快速参观感受历史氛围。
+                <div class="spot-tags">
+                  <span class="spot-tag">⛪ 中世纪木教堂</span>
+                  <span class="spot-tag">🕯️ 朝圣地</span>
+                  <span class="spot-tag">🎨 古壁画</span>
+                  <span class="spot-tag">⏱️ 可选·绕行</span>
+                </div>
+              </div>
+            </details>
             <div class="timeline-sub">建于1200–1250年 · 中世纪朝圣地 · 绕行后到Odda约45分钟(比直接走多约30分钟)</div>
             <div class="timeline-sub"><span class="hl">🍽️ 午饭:绕到Røldal可在教堂旁Skysstationen Café吃简餐;不绕则看完两瀑直接到Odda镇上吃(选择更多)</span></div>
           </div>
@@ -1111,7 +1202,7 @@
         <div class="weekday">周日</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">哈当厄尔峡湾 Eidfjord → 卑尔根 · 约160km · 含停约5-6小时</div>
+        <div class="day-location">哈当厄尔峡湾 HARDANGERFJORD → 卑尔根 BERGEN · 约160km</div>
         <div class="day-title">Vøringsfossen观景台 · 哈当厄尔大桥 · 还车</div>
       </div>
     </div>
@@ -1141,6 +1232,18 @@
           <div class="timeline-content">
             <div class="timeline-main">Vøringsfossen 瀑布（停约1.5-2小时）</div>
             <div class="timeline-sub">挪威最著名瀑布 · 182米直泻进Måbødalen峡谷</div>
+            <details class="spot">
+              <summary>Vøringsfossen 瀑布</summary>
+              <div class="spot-body">
+                挪威知名度最高的瀑布,水流从Hardangervidda高原边缘自由落体182米、直泻进幽深的Måbødalen峡谷。自19世纪起就是经典旅游目的地,如今新建了多座建筑师设计的观景平台和一座横跨峡谷的步行桥(Sky Bridge),可从多个角度俯瞰、近观、甚至徒步下到谷底看瀑布脚。海拔约750-1000米、天气多变,8月水量最大、是最佳季节。
+                <div class="spot-tags">
+                  <span class="spot-tag">💧 182米瀑布</span>
+                  <span class="spot-tag">🔭 多观景平台</span>
+                  <span class="spot-tag">🌉 跨谷步行桥</span>
+                  <span class="spot-tag">📸 必看景观</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item sub-item">
@@ -1198,6 +1301,17 @@
           <div class="timeline-content">
             <div class="timeline-main">Hardanger Bridge Viewpoint 哈当厄尔大桥观景台（停20分钟）</div>
             <div class="timeline-sub">挪威最长悬索桥之一 · 横跨哈当厄尔峡湾 · 观景台俯瞰大桥和峡湾</div>
+            <details class="spot">
+              <summary>哈当厄尔大桥 Hardanger Bridge</summary>
+              <div class="spot-body">
+                2013年通车的悬索桥(Hardangerbrua),主跨1310米,是挪威最长、世界级的悬索桥之一,横跨哈当厄尔峡湾、连接两岸隧道。桥塔高约200米,桥面距水面55米。观景台可俯瞰大桥优美的弧线和深蓝峡湾,是工程与自然结合的经典挪威景观。过桥本身也是一段难忘体验。
+                <div class="spot-tags">
+                  <span class="spot-tag">🌉 1310米悬索桥</span>
+                  <span class="spot-tag">📸 峡湾全景</span>
+                  <span class="spot-tag">⏱️ 停20分钟</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="transport-card">
@@ -1216,6 +1330,18 @@
           <div class="timeline-content">
             <div class="timeline-main">Steinsdalsfossen 瀑布（Norheimsund旁 · 能走到瀑布后面!）</div>
             <div class="timeline-sub">就在Rv7路边、停车场到观景点很短 · 50米瀑布,有小路绕到水帘后面、走过去不会淋湿 · 挪威最受欢迎瀑布之一 · 免费 · 停车场旁有游客中心/厕所/咖啡 · 离卑尔根约1小时15分</div>
+            <details class="spot">
+              <summary>Steinsdalsfossen 瀑布</summary>
+              <div class="spot-body">
+                Norheimsund村旁的瀑布,落差约50米,最大特色是有一条修好的小径绕到水帘背后——你能站在瀑布内侧、隔着水帘看外面的世界,而且不会被淋湿,体验很特别。瀑布1699年因河流改道形成,1899年起就是热门景点(德皇威廉二世曾多次到访)。就在Rv7路边、停车走几步就到,免费,旁有游客中心和咖啡。
+                <div class="spot-tags">
+                  <span class="spot-tag">💧 50米瀑布</span>
+                  <span class="spot-tag">🚶 走到瀑布后</span>
+                  <span class="spot-tag">🆓 免费</span>
+                  <span class="spot-tag">📸 独特体验</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="transport-card">
@@ -1262,7 +1388,7 @@
         <div class="weekday">周一</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">挪威缩影 Norway in a Nutshell · 全天</div>
+        <div class="day-location">挪威缩影 NORWAY IN A NUTSHELL · 全天</div>
         <div class="day-title">峡湾 · 游船 · 高山小火车</div>
       </div>
     </div>
@@ -1285,6 +1411,17 @@
           <div class="timeline-content">
             <div class="timeline-main">沃斯 Voss（停1h32min · 观光）</div>
             <div class="timeline-sub">西挪威"户外探险之都" · 峡谷湖畔小镇 · 可坐Voss Gondol缆车(北欧最大最现代山地缆车,9分钟升到818米俯瞰全镇) · 镇中心有带古墓地的老教堂、购物中心 · 早饭酒店已吃,这里纯逛景</div>
+            <details class="spot">
+              <summary>沃斯 Voss</summary>
+              <div class="spot-body">
+                坐落在两座湖泊之间的山谷小镇,是西挪威的"户外探险之都"——跳伞、滑翔、漂流、滑雪都很有名。最值得的是Voss Gondol缆车,从火车站旁9分钟升到Hangurstoppen山顶(海拔约818米),俯瞰小镇、湖泊和群山,山顶有餐厅。镇中心还有一座13世纪的石砌老教堂。1h32min足够坐缆车上山看个全景或在镇上走走。
+                <div class="spot-tags">
+                  <span class="spot-tag">🚡 山顶缆车</span>
+                  <span class="spot-tag">🏔️ 户外之都</span>
+                  <span class="spot-tag">📸 全镇全景</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="transport-card">
@@ -1304,6 +1441,17 @@
           <div class="timeline-content">
             <div class="timeline-main">古德旺根 Gudvangen（停2h20min · 观光）</div>
             <div class="timeline-sub">挪威最小村落之一(约百人) · 夹在Nærøyfjord峡湾深处 · 亮点是Njardarheimr维京村(离码头步行可达的重建维京聚落·导览/扔斧头/射箭/传统手工艺/维京咖啡馆) · 村子很小步行可逛完 · 背后有Stalheim峡谷"国王路"盘山景</div>
+            <details class="spot">
+              <summary>古德旺根维京村 Njardarheimr</summary>
+              <div class="spot-body">
+                古德旺根是夹在Nærøyfjord峡湾最深处的小村,亮点是Njardarheimr维京村——一座按史实重建的活态维京聚落,身着古装的"村民"现场展示维京时代的生活、手工艺(锻铁、织布、木工)、信仰和日常,游客可参加导览、试射箭、扔斧头,还有维京风格的咖啡馆和商店。从渡轮码头步行可达,适合在等船的2小时里沉浸式体验维京文化。
+                <div class="spot-tags">
+                  <span class="spot-tag">🛶 活态维京村</span>
+                  <span class="spot-tag">🎯 射箭/扔斧</span>
+                  <span class="spot-tag">🏔️ 峡湾深处</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="transport-card">
@@ -1318,11 +1466,40 @@
           </div>
         </div>
         <div class="timeline-item">
+          <div class="timeline-icon">⛴️</div>
+          <div class="timeline-time">航程</div>
+          <div class="timeline-content">
+            <details class="spot">
+              <summary>纳柔依峡湾 Nærøyfjord（UNESCO世界遗产）</summary>
+              <div class="spot-body">
+                松恩峡湾的一条支汊,被列入UNESCO世界遗产,是全球最窄的峡湾之一——最窄处仅约250米,两侧雪山陡壁高达1400米,瀑布从崖顶直泻入海,沿岸点缀着几乎与世隔绝的小农庄。2小时游船从古德旺根开到弗洛姆,被国家地理评为世界最佳峡湾之一,是整条"挪威缩影"路线的高潮。甲板风大,建议带防风外套。
+                <div class="spot-tags">
+                  <span class="spot-tag">🚢 UNESCO峡湾</span>
+                  <span class="spot-tag">🏔️ 最窄250米</span>
+                  <span class="spot-tag">📸 路线高潮</span>
+                  <span class="spot-tag">🧥 甲板防风</span>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="timeline-item">
           <div class="timeline-icon">🍽️</div>
           <div class="timeline-time">15:15</div>
           <div class="timeline-content">
             <div class="timeline-main">弗洛姆 Flåm（停1h55min · 午饭/观光）</div>
             <div class="timeline-sub">Aurlandsfjord峡湾尽头小村 · 弗洛姆小火车起点 · 游客中心/餐厅/纪念品店集中 · 可吃午饭、逛村、看峡湾、Flåm啤酒厂</div>
+            <details class="spot">
+              <summary>弗洛姆 Flåm</summary>
+              <div class="spot-body">
+                Aurlandsfjord峡湾尽头的迷你小村,因弗洛姆高山铁路(Flåmsbana)而闻名世界——这条铁路从海平面爬升到867米的Myrdal,被誉为世界最美铁路之一。村里集中了游客中心、餐厅、纪念品店和Ægir精酿啤酒厂(维京主题、可品酒)。1h55min可以吃午饭、在峡湾边散步、逛逛村子,再坐下午的小火车启程。
+                <div class="spot-tags">
+                  <span class="spot-tag">🚂 小火车起点</span>
+                  <span class="spot-tag">🍺 精酿啤酒厂</span>
+                  <span class="spot-tag">🍽️ 午饭/逛村</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="transport-card">
@@ -1365,7 +1542,7 @@
         <div class="weekday">周二</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">卑尔根</div>
+        <div class="day-location">卑尔根 BERGEN</div>
         <div class="day-title">布吕根 · 鱼市 · 登Hurtigruten</div>
       </div>
     </div>
@@ -1385,6 +1562,17 @@
           <div class="timeline-content">
             <div class="timeline-main">布吕根 Bryggen 老街（UNESCO世界遗产）</div>
             <div class="timeline-sub">彩色木屋 · 汉萨同盟历史港口 · 钻进后巷逛设计小店/画廊/咖啡馆 · 有汉萨博物馆</div>
+            <details class="spot">
+              <summary>布吕根 Bryggen 老街</summary>
+              <div class="spot-body">
+                卑尔根的灵魂、UNESCO世界遗产。这排彩色的尖顶木屋是14-16世纪汉萨同盟商人的贸易据点,曾是北欧鳕鱼贸易的中心。木屋历经多次火灾重建,如今保留着歪斜的木结构和狭窄后巷,里面藏着设计小店、画廊、手工艺作坊和咖啡馆。旁边的汉萨博物馆还原了当年商人的生活。是卑尔根最经典的拍照地。
+                <div class="spot-tags">
+                  <span class="spot-tag">🏚️ UNESCO世遗</span>
+                  <span class="spot-tag">🎨 汉萨木屋</span>
+                  <span class="spot-tag">📸 必看景观</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1393,6 +1581,17 @@
           <div class="timeline-content">
             <div class="timeline-main">卑尔根古城堡 Bergenhus Fortress（可选）</div>
             <div class="timeline-sub">海边中世纪要塞 · 离布吕根很近 · 可在外围草坪/城墙走走</div>
+            <details class="spot">
+              <summary>卑尔根古城堡 Bergenhus Fortress</summary>
+              <div class="spot-body">
+                挪威保存最完好的中世纪要塞之一,扼守卑尔根港口入口,就在布吕根旁边。核心是13世纪的Håkon厅(王家宴会厅)和Rosenkrantz塔。曾是挪威王国的政治中心。外围草坪和城墙免费开放,可散步看港口和峡湾,室内展厅需购票。
+                <div class="spot-tags">
+                  <span class="spot-tag">🏰 中世纪要塞</span>
+                  <span class="spot-tag">🚶 外围免费</span>
+                  <span class="spot-tag">⏱️ 可选</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1401,6 +1600,17 @@
           <div class="timeline-content">
             <div class="timeline-main">卑尔根鱼市 Fisketorget 午饭</div>
             <div class="timeline-sub">13世纪起的海鲜市场 · 新鲜三文鱼/帝王蟹/海鲜拼盘 · 多数摊位刷卡</div>
+            <details class="spot">
+              <summary>卑尔根鱼市 Fisketorget</summary>
+              <div class="spot-body">
+                位于港口边的露天/室内海鲜市场,从13世纪起就是渔民与商人交易的地方,如今是游客必到的美食地标。可现点现做三文鱼、帝王蟹腿、海鲜拼盘、鲸鱼肉,也有摊位卖鱼汤和三明治。价格偏贵(挪威物价),但氛围好、食材新鲜。多数摊位刷卡。室内市场全年开放。
+                <div class="spot-tags">
+                  <span class="spot-tag">🐟 海鲜市场</span>
+                  <span class="spot-tag">🦀 帝王蟹</span>
+                  <span class="spot-tag">💰 偏贵</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1409,6 +1619,17 @@
           <div class="timeline-content">
             <div class="timeline-main">弗洛伊恩山 Fløyen 缆车</div>
             <div class="timeline-sub">Fløibanen缆车下站离鱼市/布吕根仅150米 · 6-8分钟到320米山顶 · 俯瞰全城/峡湾/海岛 · 山顶有咖啡馆、巨魔森林Troll Forest、山羊、步道 · 往返约NOK 160 · 夏季7:30-23:00</div>
+            <details class="spot">
+              <summary>弗洛伊恩山缆车 Fløibanen</summary>
+              <div class="spot-body">
+                卑尔根最受欢迎的景点之一。Fløibanen登山缆车下站就在鱼市/布吕根旁150米,6-8分钟把你拉到320米高的Fløyen山顶,俯瞰整座城市、港口、峡湾和外海群岛,是卑尔根最佳全景点。山顶有咖啡馆、餐厅、纪念品店、儿童乐园、巨魔森林(Troll Forest)步道和散养的山羊,还能徒步下山或继续往山里走。往返缆车约NOK 160,夏季约7:30-23:00运营。
+                <div class="spot-tags">
+                  <span class="spot-tag">🚡 登山缆车</span>
+                  <span class="spot-tag">📸 城市全景</span>
+                  <span class="spot-tag">🐐 山顶步道</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1417,6 +1638,17 @@
           <div class="timeline-content">
             <div class="timeline-main">KODE 艺术博物馆（可选）</div>
             <div class="timeline-sub">四馆合一 · 挪威及国际艺术/设计 · 市中心Lille Lungegårdsvann湖畔 · 下雨天好去处</div>
+            <details class="spot">
+              <summary>KODE 艺术博物馆</summary>
+              <div class="spot-body">
+                北欧最大的艺术与设计博物馆之一,由市中心湖畔的四栋建筑(KODE 1-4)组成,收藏从古典到现代的挪威及国际艺术、设计与工艺,包括蒙克(Munch)、达尔等大师作品,还管理着作曲家格里格的故居。展品丰富、室内参观,是雨天或想深入艺术的好去处(挺合爱博物馆的口味)。需购票。
+                <div class="spot-tags">
+                  <span class="spot-tag">🎨 艺术博物馆</span>
+                  <span class="spot-tag">🖼️ 蒙克作品</span>
+                  <span class="spot-tag">☔ 雨天好去处</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="transport-card">
@@ -1449,7 +1681,7 @@
         <div class="weekday">周三</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">船上 → 奥勒松</div>
+        <div class="day-location">船上 → 奥勒松 ÅLESUND</div>
         <div class="day-title">盖朗厄尔峡湾 · 抵达奥勒松</div>
       </div>
     </div>
@@ -1461,6 +1693,17 @@
           <div class="timeline-content">
             <div class="timeline-main">船上观景 · 盖朗厄尔峡湾（UNESCO）</div>
             <div class="timeline-sub">七姐妹瀑布 · 求婚者瀑布</div>
+            <details class="spot">
+              <summary>盖朗厄尔峡湾 Geirangerfjord</summary>
+              <div class="spot-body">
+                挪威最负盛名的峡湾,UNESCO世界遗产,15公里长的深蓝水道两侧是近乎垂直的千米峭壁,瀑布从崖顶层层跌落。最有名的是"七姐妹"瀑布(七股并排的水流)和对岸的"求婚者"瀑布。邮轮缓缓驶入峡湾深处时,两岸还点缀着废弃的悬崖农庄,景色震撼。这天在船上观景,无需另付。
+                <div class="spot-tags">
+                  <span class="spot-tag">🚢 UNESCO峡湾</span>
+                  <span class="spot-tag">💧 七姐妹瀑布</span>
+                  <span class="spot-tag">📸 必看景观</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1469,6 +1712,17 @@
           <div class="timeline-content">
             <div class="timeline-main">奥勒松下船（第二次靠港）· 入住Scandic Parken</div>
             <div class="timeline-sub">新艺术风格小城 · Art Nouveau建筑群</div>
+            <details class="spot">
+              <summary>奥勒松 Ålesund · 新艺术建筑</summary>
+              <div class="spot-body">
+                建在几座小岛上的海港城市,1904年一场大火几乎烧毁全城,随后在短短几年内以当时流行的"新艺术(Art Nouveau / Jugendstil)"风格统一重建,因此整座城市拥有罕见、和谐的新艺术建筑群——塔楼、曲线山墙、装饰立面随处可见,被誉为欧洲最美的新艺术城市之一。登Aksla山顶(Fjellstua观景台,418级台阶或开车)可俯瞰全城、群岛和峡湾的经典明信片画面。
+                <div class="spot-tags">
+                  <span class="spot-tag">🏛️ 新艺术建筑</span>
+                  <span class="spot-tag">📸 Aksla观景台</span>
+                  <span class="spot-tag">🌊 海港群岛</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -1494,7 +1748,7 @@
         <div class="weekday">周四</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">奥勒松</div>
+        <div class="day-location">奥勒松 ÅLESUND</div>
         <div class="day-title">精灵之路 · 巨魔之墙 · 罗姆斯达尔阿尔卑斯</div>
       </div>
     </div>
@@ -1514,6 +1768,28 @@
           <div class="timeline-content">
             <div class="timeline-main">精灵之路Trollstigen · 巨魔之墙Trollveggen</div>
             <div class="timeline-sub">欧洲最高垂直岩壁 · 北欧最壮观山景</div>
+            <details class="spot">
+              <summary>精灵之路 Trollstigen（巨魔之路）</summary>
+              <div class="spot-body">
+                挪威最著名的山路之一,在陡峭山壁上以11道急转发卡弯盘旋爬升到约850米,沿途有Stigfossen瀑布(落差320米)从弯道间倾泻而下。山顶建有现代设计的观景平台,凌空俯瞰整条蜿蜒山路和山谷,是挪威国家观光路线的招牌。注:这段老山路偶因落石/塌方临时封闭,若封路团仍会带到南侧山顶观景台看全景。
+                <div class="spot-tags">
+                  <span class="spot-tag">🏔️ 11发卡弯</span>
+                  <span class="spot-tag">💧 Stigfossen瀑布</span>
+                  <span class="spot-tag">🔭 观景平台</span>
+                </div>
+              </div>
+            </details>
+            <details class="spot">
+              <summary>巨魔之墙 Trollveggen</summary>
+              <div class="spot-body">
+                欧洲最高的垂直岩壁,从谷底几乎笔直拔起约1100米(垂直落差),顶部还向外悬伸,是世界顶级攀岩和(已被禁止的)定点跳伞圣地。岩壁常年云雾缭绕、气势骇人,得名"巨魔之墙"。团会在山脚的观景点停车,仰望这面巨墙和周围的罗姆斯达尔阿尔卑斯群峰。
+                <div class="spot-tags">
+                  <span class="spot-tag">🧗 欧洲最高岩壁</span>
+                  <span class="spot-tag">🏔️ 垂直1100米</span>
+                  <span class="spot-tag">📸 震撼山景</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -1538,7 +1814,7 @@
         <div class="weekday">周五</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">奥勒松</div>
+        <div class="day-location">奥勒松 ÅLESUND</div>
         <div class="day-title">盖朗厄尔峡湾游船 · 老鹰之路</div>
       </div>
     </div>
@@ -1558,6 +1834,28 @@
           <div class="timeline-content">
             <div class="timeline-main">盖朗厄尔峡湾游船（约2小时）· 老鹰之路Ørnesvingen <span class="badge badge-booked">已订 $379.04 · GYG32L5RX6YZ</span></div>
             <div class="timeline-sub">GetYourGuide · 约10.5小时</div>
+            <details class="spot">
+              <summary>盖朗厄尔峡湾游船 Geirangerfjord Cruise</summary>
+              <div class="spot-body">
+                从盖朗厄尔村乘船游览UNESCO峡湾,约2小时,从水面近距离仰望两岸千米峭壁、七姐妹瀑布、求婚者瀑布和悬崖农庄——这是从陆路看不到的角度,水上视角最能感受峡湾的深邃与壮阔。比8/12在大邮轮上路过更近、更从容。
+                <div class="spot-tags">
+                  <span class="spot-tag">🚢 峡湾游船</span>
+                  <span class="spot-tag">💧 七姐妹瀑布</span>
+                  <span class="spot-tag">📸 水上视角</span>
+                </div>
+              </div>
+            </details>
+            <details class="spot">
+              <summary>老鹰之路 Ørnesvingen（Eagle Road）</summary>
+              <div class="spot-body">
+                盖朗厄尔通往Eidsdal方向的盘山公路,11道急转弯沿陡坡爬升,因弯道形如雄鹰盘旋而得名"老鹰之路"。最高处的Ørnesvingen观景台是俯瞰盖朗厄尔峡湾、七姐妹瀑布和峡湾尽头小村的经典明信片机位,几乎是盖朗厄尔最出片的角度。
+                <div class="spot-tags">
+                  <span class="spot-tag">🦅 老鹰盘山路</span>
+                  <span class="spot-tag">🔭 峡湾全景台</span>
+                  <span class="spot-tag">📸 最出片</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -1582,7 +1880,7 @@
         <div class="weekday">周六</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">奥勒松 → 大洋之路 → 莫尔德</div>
+        <div class="day-location">奥勒松 ÅLESUND → 大洋之路 → 莫尔德 MOLDE</div>
         <div class="day-title">大洋之路自驾 · 住莫尔德</div>
       </div>
     </div>
@@ -1603,6 +1901,17 @@
           <div class="timeline-content">
             <div class="timeline-main">大洋之路 Atlanterhavsveien 自驾（10:00出发 · 约1.5小时）</div>
             <div class="timeline-sub">被评为"世纪建筑工程" · 跨越多个小岛和海湾 · Storseisundet大桥最出片 · 沿途多个观景停车点</div>
+            <details class="spot">
+              <summary>大洋之路 Atlanterhavsveien</summary>
+              <div class="spot-body">
+                挪威最传奇的公路之一,全长约8公里,用8座桥梁把一串礁石小岛串连起来,蜿蜒在大西洋的惊涛骇浪之间,曾被评为挪威"世纪建筑工程"和世界最美自驾公路之一。最出片的是Storseisundet大桥——从某些角度看像一座"断桥"冲向天空。沿途有多个观景平台和钓鱼点,天气好时碧海蓝天,起风时巨浪拍桥同样震撼。
+                <div class="spot-tags">
+                  <span class="spot-tag">🌊 传奇自驾路</span>
+                  <span class="spot-tag">🌉 Storseisundet断桥</span>
+                  <span class="spot-tag">📸 世界最美公路</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1611,6 +1920,18 @@
           <div class="timeline-content">
             <div class="timeline-main">大洋之路沿途 · Bud渔村 / Averøy（可选）</div>
             <div class="timeline-sub">慢慢玩,不用赶 · Bud二战海岸炮台、渔村风光 · Averøy岛上Kvernes木板教堂</div>
+            <details class="spot">
+              <summary>Bud 渔村 / Averøy 岛</summary>
+              <div class="spot-body">
+                大洋之路两端的小看点。Bud是个宁静的海边渔村,曾是16-17世纪挪威西海岸重要的贸易港,如今保留着渔村风貌,村外有二战时期德军修建的Ergan海岸炮台(露天博物馆)。Averøy岛上有建于约1300年的Kvernes木板教堂。这些都是大洋之路沿途可顺道停的点,体力和时间充裕就去,不用赶。
+                <div class="spot-tags">
+                  <span class="spot-tag">🎣 海边渔村</span>
+                  <span class="spot-tag">🪖 二战炮台</span>
+                  <span class="spot-tag">⛪ 木板教堂</span>
+                  <span class="spot-tag">⏱️ 可选</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1619,6 +1940,17 @@
           <div class="timeline-content">
             <div class="timeline-main">抵达莫尔德 Molde · 入住</div>
             <div class="timeline-sub">玫瑰城 · Moldepanorama观景台(222座雪山全景) · 晚饭逛城</div>
+            <details class="spot">
+              <summary>莫尔德 Molde · 玫瑰城</summary>
+              <div class="spot-body">
+                罗姆斯达尔峡湾边的港口小城,因气候温和、城里遍植玫瑰而被称为"玫瑰之城",也以欧洲历史最悠久的爵士音乐节(Moldejazz,每年7月)闻名。最著名的是"莫尔德全景"(Moldepanorama)——从城后山的Varden观景台(可开车上去)望出去,峡湾对岸排开222座雪山峰,蔚为壮观。城市小巧,适合傍晚散步、吃晚饭、放松。
+                <div class="spot-tags">
+                  <span class="spot-tag">🌹 玫瑰城</span>
+                  <span class="spot-tag">🏔️ 222雪山全景</span>
+                  <span class="spot-tag">🎷 爵士音乐节</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -1650,7 +1982,7 @@
         <div class="weekday">周日</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">莫尔德 → 奥勒松机场 → 赫尔辛基</div>
+        <div class="day-location">莫尔德 MOLDE → 奥勒松机场 → 赫尔辛基 HELSINKI</div>
         <div class="day-title">开回奥勒松 · 飞赫尔辛基</div>
       </div>
     </div>
@@ -1713,7 +2045,7 @@
         <div class="weekday">周一</div>
       </div>
       <div class="day-title-area">
-        <div class="day-location">赫尔辛基</div>
+        <div class="day-location">赫尔辛基 HELSINKI</div>
         <div class="day-title">城市游览</div>
       </div>
     </div>
@@ -1724,6 +2056,27 @@
           <div class="timeline-time">上午</div>
           <div class="timeline-content">
             <div class="timeline-main">赫尔辛基大教堂 · 参议院广场</div>
+            <details class="spot">
+              <summary>赫尔辛基大教堂 Helsinki Cathedral</summary>
+              <div class="spot-body">
+                赫尔辛基的标志性建筑,1852年建成的新古典主义路德派教堂,通体洁白、顶着绿色穹顶,高居一段宽阔台阶之上,俯瞰参议院广场。是全城最经典的明信片画面,内部简洁庄严,免费参观。
+                <div class="spot-tags">
+                  <span class="spot-tag">⛪ 城市地标</span>
+                  <span class="spot-tag">🤍 新古典白教堂</span>
+                  <span class="spot-tag">📸 必看景观</span>
+                </div>
+              </div>
+            </details>
+            <details class="spot">
+              <summary>参议院广场 Senate Square</summary>
+              <div class="spot-body">
+                赫尔辛基的心脏广场,由建筑师恩格尔规划,四周环绕大教堂、政府宫、赫尔辛基大学主楼等新古典主义建筑,中央立着沙皇亚历山大二世雕像,是19世纪"帝国都城"风貌的完整呈现。常举办活动和市集,也是城市观光的起点。
+                <div class="spot-tags">
+                  <span class="spot-tag">🏛️ 新古典广场</span>
+                  <span class="spot-tag">🚶 观光起点</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1732,6 +2085,28 @@
           <div class="timeline-content">
             <div class="timeline-main">集市广场 · 渡轮去芬兰堡</div>
             <div class="timeline-sub">UNESCO世界遗产 · 18世纪海上要塞</div>
+            <details class="spot">
+              <summary>集市广场 Market Square（Kauppatori）</summary>
+              <div class="spot-body">
+                赫尔辛基海港边的露天市集广场,摊位卖浆果、海鲜、芬兰手工艺品和小吃(可试煎鲱鱼、肉桂卷),旁边是有名的老市场大厅(Old Market Hall)。也是乘船去芬兰堡和群岛的渡轮码头所在,热闹又有海港氛围。
+                <div class="spot-tags">
+                  <span class="spot-tag">🛍️ 海港市集</span>
+                  <span class="spot-tag">🍓 芬兰小吃</span>
+                  <span class="spot-tag">⛴️ 渡轮码头</span>
+                </div>
+              </div>
+            </details>
+            <details class="spot">
+              <summary>芬兰堡 Suomenlinna</summary>
+              <div class="spot-body">
+                建在赫尔辛基外海几座岛屿上的18世纪海防要塞,UNESCO世界遗产,从集市广场坐渡轮约15-20分钟即达。岛上保留着炮台、城墙、干船坞和军营,如今也有居民、博物馆、咖啡馆和草坪,是散步、野餐、看海的绝佳半日游。渡轮用赫尔辛基公共交通票即可乘坐。
+                <div class="spot-tags">
+                  <span class="spot-tag">🏰 UNESCO海上要塞</span>
+                  <span class="spot-tag">⛴️ 渡轮可达</span>
+                  <span class="spot-tag">🚶 半日游</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
         <div class="timeline-item">
@@ -1739,6 +2114,27 @@
           <div class="timeline-time">下午</div>
           <div class="timeline-content">
             <div class="timeline-main">设计区 · 岩石教堂 Temppeliaukio Kirkko</div>
+            <details class="spot">
+              <summary>设计区 Design District</summary>
+              <div class="spot-body">
+                赫尔辛基市中心的一片街区,聚集了约200家设计店、工作室、画廊、古着店和咖啡馆,是体验芬兰设计(家居、服饰、陶瓷、玻璃)的最佳去处。芬兰以简约功能主义设计闻名(如Marimekko、Iittala、Artek),喜欢逛设计/选物店的话很对胃口。
+                <div class="spot-tags">
+                  <span class="spot-tag">🎨 芬兰设计</span>
+                  <span class="spot-tag">🛍️ 选物店/画廊</span>
+                </div>
+              </div>
+            </details>
+            <details class="spot">
+              <summary>岩石教堂 Temppeliaukio Kirkko</summary>
+              <div class="spot-body">
+                赫尔辛基最独特的建筑,1969年直接在一整块天然岩石中开凿建成的路德派教堂——墙壁是裸露的岩石,顶部是铜质圆盘配玻璃天窗,自然光从四周漏入,音响效果极佳,常用于音乐会。低调隐藏在住宅区里,内部空间宁静震撼,值得一看。需购票。
+                <div class="spot-tags">
+                  <span class="spot-tag">⛪ 岩石中的教堂</span>
+                  <span class="spot-tag">🎵 音响绝佳</span>
+                  <span class="spot-tag">📸 独特建筑</span>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
